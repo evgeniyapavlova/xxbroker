@@ -1,0 +1,65 @@
+@use '$lib/styles/_constants' as var;
+
+#wrap-lang-switch {
+	position: relative;
+
+	.lang-switcher {
+		display: flex;
+		align-items: center;
+		gap: 9px;
+	}
+
+	.button-medium {
+		width: 100%;
+		text-align: left;
+		cursor: pointer;
+		background-repeat: no-repeat;
+		background-position: 12px center;
+		padding-left: 40px;
+
+		svg {
+			transition: rotate 0.5s ease-out;
+		}
+
+		&.is-expanded {
+			svg {
+				rotate: 180deg;
+			}
+		}
+		&.button-locale {
+			&-en {
+				background-image: url(/images/flags/flag_en.svg);
+			}
+			&-pt {
+				background-image: url(/images/flags/flag_pt.svg);
+			}
+			&-es {
+				background-image: url(/images/flags/flag_es.svg);
+			}
+		}
+	}
+}
+
+menu#menu-lang-switch {
+	cursor: pointer;
+	position: absolute;
+	top: 44px;
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+	width: 150px;
+	border-radius: 12px;
+	z-index: 1001;
+	padding: 8px;
+	text-align: left;
+	right: 0;
+	background-color: var(--moss-300);
+}
+
+.menu-inner {
+	z-index: 1;
+	position: relative;
+	display: flex;
+	gap: 2px;
+	flex-direction: column;
+}
