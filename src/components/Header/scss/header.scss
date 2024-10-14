@@ -1,0 +1,91 @@
+@use '$lib/styles/_constants' as var;
+header {
+	padding: 16px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	@media screen and (max-width: var.$tab-s) {
+		gap: 4px;
+	}
+	@media screen and (max-width: var.$mob-l) {
+		gap: 2px;
+	}
+}
+.header-menu {
+	flex-grow: 1;
+
+	&-desktop {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 24px;
+	}
+
+	&-mobile {
+		display: none;
+	}
+
+	@media screen and (max-width: var.$desk-s) {
+		&-desktop {
+			display: none;
+		}
+		&-mobile {
+			display: inline-block;
+		}
+	}
+}
+.logo-link {
+	margin-right: 24px;
+	@media screen and (max-width: var.$tab-s) {
+		margin-right: 12px;
+	}
+	@media screen and (max-width: var.$mob-l) {
+		margin-right: 10px;
+	}
+}
+
+.menu-icon {
+	width: 20px;
+	height: 16px;
+	border: 1px solid var(--moss-600);
+	border-left: none;
+	border-right: none;
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: '';
+		background-color: var(--moss-600);
+		height: 1px;
+		top: 50%;
+		left: 0;
+		width: 16px;
+	}
+}
+
+@media screen and (max-width: var.$tab-s) {
+	#header-get-started,
+	#lang-switcher-label {
+		display: none;
+	}
+	.lang-switcher {
+		min-height: 40px;
+	}
+	#menu-dropdown-label {
+		display: none;
+	}
+	#mobile-menu-wrap .button-icon {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+}
+
+@media screen and (max-width: var.$mob-l) {
+	#header-login-label {
+		display: none;
+	}
+	#header-login {
+		padding: 11px;
+	}
+}
