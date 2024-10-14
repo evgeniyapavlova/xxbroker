@@ -1,0 +1,8 @@
+@use '$lib/styles/_constants' as var;
+
+h1 {
+	color: #fff;
+	font-family: var(--mabry-font);
+	font-weight: 500;
+	@include var.font(88px, 110px);
+}

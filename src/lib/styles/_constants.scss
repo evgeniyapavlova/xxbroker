@@ -1,0 +1,12 @@
+@mixin font($fz, $lh) {
+	font-size: $fz;
+	line-height: $lh;
+}
+
+$desk-xl: 1440px;
+$desk-l: 1366px;
+$desk-s: 1024px;
+$tab-m: 720px;
+$tab-s: 484px;
+$mob-l: 393px;
+$mob-m: 320px;

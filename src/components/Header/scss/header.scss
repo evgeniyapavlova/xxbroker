@@ -1,11 +1,12 @@
 @use '$lib/styles/_constants' as var;
+
 header {
 	padding: 16px 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 8px;
-	@media screen and (max-width: var.$tab-s) {
+	@media screen and (max-width: var.$tab-m) {
 		gap: 4px;
 	}
 	@media screen and (max-width: var.$mob-l) {
@@ -37,7 +38,7 @@ header {
 }
 .logo-link {
 	margin-right: 24px;
-	@media screen and (max-width: var.$tab-s) {
+	@media screen and (max-width: var.$tab-m) {
 		margin-right: 12px;
 	}
 	@media screen and (max-width: var.$mob-l) {
@@ -64,7 +65,7 @@ header {
 	}
 }
 
-@media screen and (max-width: var.$tab-s) {
+@media screen and (max-width: var.$tab-m) {
 	#header-get-started,
 	#lang-switcher-label {
 		display: none;
