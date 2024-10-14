@@ -3,7 +3,7 @@
 	import { lang } from '$lib/stores/lang';
 	import { getURLParameters } from '$lib/utils/getAffParams';
 	import { searchString } from '$lib/stores/affs';
-	import { linkLogin, linkRegister } from '$lib/stores/reg_link';
+	import { linkLogin, linkRegister, linkTraderoom } from '$lib/stores/reg_link';
 
 	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
 
@@ -17,8 +17,10 @@
 		lazyLoadBackground();
 
 		$searchString = getURLParameters();
-		$linkRegister += $lang + '/register';
-		$linkLogin += $lang + '/login';
+
+		$linkRegister += $lang + '/register' + $searchString;
+		$linkLogin += $lang + '/login' + $searchString;
+		$linkTraderoom += $lang + $searchString;
 	});
 </script>
 

@@ -164,3 +164,53 @@ h1 {
 		}
 	}
 }
+
+.devices {
+	&-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+		margin-top: 88px;
+
+		@media screen and (max-width: var.$tab-m) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	&-content {
+		&-title {
+			font-size: 18px;
+			line-height: 1.5;
+			color: var(--moss-800);
+			font-weight: 600;
+		}
+		&-desc {
+			color: var(--moss-600);
+			font-size: 16px;
+			line-height: 1.5;
+			font-weight: 400;
+		}
+	}
+	&-icons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		padding: 12px 16px;
+		border-radius: 14px;
+		background-color: var(--moss-200);
+		a {
+			svg {
+				transition: fill 0.2s ease-in-out;
+				fill: var(--moss-600);
+			}
+			&:hover svg {
+				fill: var(--acid-400);
+			}
+			&:active svg {
+				fill: var(--acid-200);
+			}
+		}
+	}
+}

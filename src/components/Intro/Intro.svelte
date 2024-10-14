@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Platform from './Platform.svelte';
+	import Devices from './Devices.svelte';
 	import './scss/intro.scss';
 	export let content;
 
@@ -46,5 +47,6 @@
 			</div>
 		</div>
 		<Platform />
+		<Devices content={{ available_on_devices, available_on_devices_caption }} />
 	</section>
 </div>

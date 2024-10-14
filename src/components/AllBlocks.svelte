@@ -23,16 +23,17 @@
 	});
 </script>
 
-<div style="background-image: url({base}/images/bgr/intro_bgr.svg);">
-	{#if isTranslationLoaded}
-		<Header content={translation.header} />
-		<Intro content={translation.intro} />
-	{/if}
-	<!-- <div style="height: 300vh;"></div> -->
+<div class="main">
+	<div style="background-image: url({base}/images/bgr/intro_bgr.svg);" class="intro-bgr">
+		{#if isTranslationLoaded}
+			<Header content={translation.header} />
+			<Intro content={translation.intro} />
+		{/if}
+	</div>
 </div>
 
 <style>
-	div {
+	.intro-bgr {
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;

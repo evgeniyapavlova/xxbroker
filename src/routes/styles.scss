@@ -51,6 +51,21 @@ body {
 	min-height: 100vh;
 }
 
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 160px;
+	@media screen and (max-width: var.$desk-l) {
+		gap: 144px;
+	}
+	@media screen and (max-width: var.$desk-s) {
+		gap: 128px;
+	}
+	@media screen and (max-width: var.$mob-l) {
+		gap: 112px;
+	}
+}
+
 ul {
 	list-style-type: none;
 }
