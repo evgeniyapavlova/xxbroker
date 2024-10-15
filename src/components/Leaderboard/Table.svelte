@@ -114,12 +114,12 @@
 		});
 	}
 
-	// onMount(() => {
-	// 	leaders = sortByProfit(leaders);
+	onMount(() => {
+		leaders = sortByProfit(leaders);
 
-	// 	const interval = setInterval(animateTableUpdate, 3000);
-	// 	return () => clearInterval(interval);
-	// });
+		const interval = setInterval(animateTableUpdate, 3000);
+		return () => clearInterval(interval);
+	});
 </script>
 
 <div class="pedestal">
@@ -173,7 +173,9 @@
 				<td class="asset">
 					<CellWithImg src="{base}/images/leaderboard/assets/{leader.asset}.webp">
 						<svelte:fragment slot="title">{assets[leader.asset - 1]}</svelte:fragment>
-						<svelte:fragment slot="caption">{assetType}</svelte:fragment>
+						<svelte:fragment slot="caption"
+							>{leader.asset === 4 ? 'Stocks' : assetType}</svelte:fragment
+						>
 					</CellWithImg>
 				</td>
 				<td>{leader.time}</td>
