@@ -12,5 +12,12 @@ export default {
 		button: 'Get started for free',
 		available_on_devices: 'Avaliable on any device',
 		available_on_devices_caption: 'Control your trades from web, desktop, and mobile'
+	},
+	leaderboard: {
+		h2: 'The most profitable traders',
+		table_head: ['User', 'Asset', 'Time', 'Date', 'Buy · Sell', 'Profit'],
+		buy: 'Buy',
+		sell: 'Sell',
+		live: 'Live'
 	}
 };

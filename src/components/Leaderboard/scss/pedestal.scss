@@ -1,0 +1,165 @@
+@use '$lib/styles/_constants' as var;
+
+.pedestal {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 24px;
+	position: relative;
+	margin-bottom: 60px;
+
+	@media screen and (max-width: var.$tab-s) {
+		gap: 12px;
+	}
+
+	@media screen and (max-width: var.$mob-l) {
+		gap: 8px;
+	}
+
+	&-item-wrap {
+		width: 100%;
+		&:nth-child(2) {
+			.pedestal-item {
+				height: 117px;
+			}
+		}
+
+		&:nth-child(3) {
+			.pedestal-item {
+				height: 72px;
+			}
+		}
+	}
+
+	&-item {
+		position: relative;
+		height: 162px;
+		border: 1px solid #499969;
+		border-bottom: none;
+		background-image: linear-gradient(to bottom, #29824d 0%, rgba(24, 24, 22, 0) 100%);
+		opacity: 0.5;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+
+		&::after {
+			width: calc(100% + 4px);
+			content: '';
+			height: calc(100% + 4px);
+			display: block;
+			background-image: linear-gradient(to top, var(--moss-200), transparent);
+			position: absolute;
+			inset: -2px -2px;
+		}
+	}
+	&-block {
+		perspective: 160px;
+		position: absolute;
+		bottom: calc(100% + 1px);
+		left: -1px;
+		width: calc(100% + 2px);
+
+		&::before {
+			transform-origin: bottom;
+			display: block;
+			transform: rotateX(40deg);
+			content: '';
+			height: 100px;
+			width: 100%;
+			border: 1px solid #499969;
+			border-top: none;
+			border-bottom: none;
+			background-image: linear-gradient(to top, #29824d, rgba(24, 24, 22, 0));
+			box-sizing: border-box;
+		}
+
+		&::after {
+			content: '';
+			height: 100%;
+			width: 100%;
+			transform: rotateX(40deg);
+			background-image: linear-gradient(to bottom, var(--moss-200), transparent);
+			display: block;
+			position: absolute;
+			transform-origin: bottom;
+			bottom: 0;
+			box-sizing: border-box;
+		}
+	}
+
+	.number {
+		font-size: 160px;
+		font-family: var(--mabry-font);
+		font-weight: 800;
+		font-style: italic;
+		line-height: 1.2;
+		background-image: linear-gradient(to bottom, #a5f2c4, var(--moss-200) 75%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		opacity: 0.5;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		bottom: -80px;
+		z-index: 1;
+		@media screen and (max-width: var.$tab-m) {
+			font-size: 120px;
+		}
+		@media screen and (max-width: var.$tab-s) {
+			font-size: 96px;
+		}
+	}
+	&-lider {
+		z-index: 1;
+		position: relative;
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 90px;
+
+		@media screen and (max-width: var.$tab-m) {
+			flex-direction: column;
+			text-align: center;
+			gap: 6px;
+			margin-bottom: 60px;
+		}
+
+		img {
+			width: 52px;
+			height: 52px;
+		}
+	}
+	&-profit {
+		font-size: 16px;
+		line-height: 1.2;
+		font-weight: 500;
+		padding: 4px 10px 4px 8px;
+		background-color: rgba(92, 209, 108, 0.2);
+		border-radius: 13px;
+		color: var(--forest-600);
+		display: inline-block;
+		@media screen and (max-width: var.$tab-s) {
+			font-size: 14px;
+		}
+	}
+	&-name {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 1.5;
+		margin-bottom: 1px;
+		color: white;
+		@media screen and (max-width: var.$tab-s) {
+			font-size: 14px;
+		}
+	}
+	&-crown {
+		display: block;
+		margin: 0 auto;
+
+		@media screen and (max-width: var.$mob-l) {
+			width: 76px;
+			height: 76px;
+		}
+	}
+}

@@ -1,8 +1,18 @@
 @use '$lib/styles/_constants' as var;
 
-h1 {
+h2 {
 	color: #fff;
 	font-family: var(--mabry-font);
 	font-weight: 500;
-	@include var.font(88px, 110px);
+	background: var(--font-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 56px;
+	line-height: 1.1;
+	letter-spacing: -1%;
+	text-align: center;
+
+	@media screen and (max-width: var.$tab-s) {
+		font-size: 40px;
+	}
 }

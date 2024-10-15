@@ -28,6 +28,10 @@ h1 {
 	line-height: 1.1;
 	font-family: var(--mabry-font);
 	font-weight: 500;
+
+	background: var(--font-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	@media screen and (max-width: var.$desk-s) {
 		font-size: 72px;
 	}

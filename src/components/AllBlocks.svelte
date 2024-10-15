@@ -4,6 +4,7 @@
 
 	import Header from '$comps/Header/Header.svelte';
 	import Intro from '$comps/Intro/Intro.svelte';
+	import Leaderboard from './Leaderboard/Leaderboard.svelte';
 
 	export let lang;
 
@@ -24,12 +25,15 @@
 </script>
 
 <div class="main">
-	<div style="background-image: url({base}/images/bgr/intro_bgr.svg);" class="intro-bgr">
+	<!-- <div style="background-image: url({base}/images/bgr/intro_bgr.svg);" class="intro-bgr">
 		{#if isTranslationLoaded}
 			<Header content={translation.header} />
 			<Intro content={translation.intro} />
 		{/if}
-	</div>
+	</div> -->
+	{#if isTranslationLoaded}
+		<Leaderboard content={translation.leaderboard} />
+	{/if}
 </div>
 
 <style>
