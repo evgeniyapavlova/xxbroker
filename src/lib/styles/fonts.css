@@ -52,8 +52,8 @@
 	font-family: 'Mabry Pro';
 	font-weight: 700;
 	src:
-		url('/fonts/mabry-pro/mabry-bold.woff2') format('woff2'),
-		url('/fonts/mabry-pro/mabry-bold.woff') format('woff');
+		url('/fonts/mabry-pro/mabry-pro-bold.woff2') format('woff2'),
+		url('/fonts/mabry-pro/mabry-pro-bold.woff') format('woff');
 	font-style: normal;
 	font-display: swap;
 }
