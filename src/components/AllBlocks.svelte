@@ -6,6 +6,7 @@
 	import Intro from '$comps/Intro/Intro.svelte';
 	import Leaderboard from './Leaderboard/Leaderboard.svelte';
 	import HowToStart from './HowToStart/HowToStart.svelte';
+	import People from './People/People.svelte';
 
 	export let lang;
 
@@ -36,6 +37,8 @@
 		<Leaderboard content={translation.leaderboard} />
 		<HowToStart content={translation.how_to_start} />
 	{/if}
+
+	<People />
 </div>
 
 <style>
