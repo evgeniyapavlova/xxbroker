@@ -139,7 +139,7 @@
 			</div>
 			<div class="pedestal-item">
 				<div class="pedestal-block"></div>
-				<div class="number">{item}</div>
+				<div class="number number-italic">{item}</div>
 			</div>
 		</div>
 	{/each}

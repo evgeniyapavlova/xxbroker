@@ -1,4 +1,5 @@
 export default {
+	button: 'Get started for free',
 	header: {
 		menu: ['Leaderboard', 'How to start', 'Features', 'Awards'],
 		login: 'Log in',
@@ -19,5 +20,21 @@ export default {
 		buy: 'Buy',
 		sell: 'Sell',
 		live: 'Live'
+	},
+	how_to_start: {
+		h2: 'How to start',
+		button: 'Get started for free',
+		items: [
+			{ title: 'Register', caption: 'Get both Demo and Real account for free' },
+			{ title: 'Top up with ease', caption: 'Use your favorite payment options for deposits' },
+			{
+				title: 'Choose an asset',
+				caption: 'Experiment with currency pairs, crypto, commodities, and stocks'
+			},
+			{
+				title: 'Earn & withdraw',
+				caption: 'Make profits and cash out in no time using a convenient payment method'
+			}
+		]
 	}
 };

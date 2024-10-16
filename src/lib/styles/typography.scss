@@ -16,3 +16,13 @@ h2 {
 		font-size: 40px;
 	}
 }
+
+.number-italic {
+	font-family: var(--mabry-font);
+	font-weight: 800;
+	font-style: italic;
+	font-size: 160px;
+	line-height: 1.1;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

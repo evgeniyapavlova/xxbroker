@@ -1,5 +1,4 @@
 <script>
-	import { slide } from 'svelte/transition';
 	import Table from './Table.svelte';
 
 	import LiveTag from './LiveTag.svelte';
@@ -8,7 +7,6 @@
 	import './scss/pedestal.scss';
 </script>
 
-<!-- in:slide={{ delay: 250, duration: 300, axis: 'y' }} -->
 <section class="leaderboard" id="leaderboard">
 	<div class="leaderboard-content-wrap">
 		<LiveTag>{content.live}</LiveTag>
