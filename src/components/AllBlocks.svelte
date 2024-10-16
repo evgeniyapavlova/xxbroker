@@ -5,6 +5,7 @@
 	import Header from '$comps/Header/Header.svelte';
 	import Intro from '$comps/Intro/Intro.svelte';
 	import Leaderboard from './Leaderboard/Leaderboard.svelte';
+	import HowToStart from './HowToStart/HowToStart.svelte';
 
 	export let lang;
 
@@ -33,6 +34,7 @@
 	</div>
 	{#if isTranslationLoaded}
 		<Leaderboard content={translation.leaderboard} />
+		<HowToStart content={translation.how_to_start} />
 	{/if}
 </div>
 
