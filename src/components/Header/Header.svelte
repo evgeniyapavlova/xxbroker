@@ -11,7 +11,7 @@
 	export let content;
 </script>
 
-<section class="header-wrap">
+<section class="header-wrap" id="header">
 	<header>
 		<a href={base} class="logo-link">
 			<Logo />

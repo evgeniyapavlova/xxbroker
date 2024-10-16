@@ -112,7 +112,7 @@ h1 {
 	@media screen and (min-width: (var.$desk-s + 1px)) {
 		.asset {
 			transform: translateY(-200px);
-			transition: transform 0.3s ease-in-out;
+			transition: transform 0.7s ease-in-out;
 			&-0,
 			&-4 {
 				transition-delay: 0.05s;

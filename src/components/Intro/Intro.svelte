@@ -7,10 +7,10 @@
 
 	const { h1, h1_caption, button, available_on_devices, available_on_devices_caption } = content;
 
-	let introSectionContent;
 	let isActive = false;
 
 	onMount(() => {
+		const headerSection = document.getElementById('header');
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -27,8 +27,8 @@
 			}
 		);
 
-		if (introSectionContent) {
-			observer.observe(introSectionContent);
+		if (headerSection) {
+			observer.observe(headerSection);
 		}
 
 		return () => observer.disconnect();
@@ -37,7 +37,7 @@
 
 <div class="intro" id="intro" class:active={isActive}>
 	<section>
-		<div class="intro-text-content" bind:this={introSectionContent}>
+		<div class="intro-text-content">
 			<h1>{@html h1}</h1>
 			<div class="h1-caption">
 				{h1_caption}
