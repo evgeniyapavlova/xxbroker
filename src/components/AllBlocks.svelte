@@ -7,6 +7,7 @@
 	import Leaderboard from './Leaderboard/Leaderboard.svelte';
 	import HowToStart from './HowToStart/HowToStart.svelte';
 	import People from './People/People.svelte';
+	import Conditions from './Conditions/Conditions.svelte';
 
 	export let lang;
 
@@ -39,6 +40,10 @@
 	{/if}
 
 	<People />
+
+	{#if isTranslationLoaded}
+		<Conditions content={translation.conditions} />
+	{/if}
 </div>
 
 <style>

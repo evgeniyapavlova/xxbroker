@@ -1,0 +1,122 @@
+@use '$lib/styles/_constants' as var;
+
+.conditions {
+	// overflow: hidden;
+
+	@media screen and (max-width: 380px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	h2 {
+		margin-bottom: 72px;
+
+		@media screen and (max-width: var.$desk-s) {
+			margin-bottom: 48px;
+		}
+	}
+
+	&-content-wrap {
+		background-image: radial-gradient(
+				circle at center 0,
+				rgba(39, 140, 80, 0.1),
+				rgba(21, 26, 23, 0)
+			),
+			linear-gradient(to bottom, var(--moss-200), var(--moss-50));
+		border-radius: 72px 72px 0 0;
+		height: 100vh;
+		padding: 128px 40px 0;
+
+		@media screen and (max-width: var.$desk-s) {
+			border-radius: 64px 64px 0 0;
+			padding: 128px 32px 0;
+		}
+		@media screen and (max-width: var.$tab-m) {
+			border-radius: 48px 48px 0 0;
+			padding: 96px 16px 0;
+		}
+		@media screen and (max-width: var.$mob-l) {
+			padding: 88px 16px 0;
+		}
+		@media screen and (max-width: 380px) {
+			border-radius: 32px 32px 0 0;
+		}
+	}
+
+	&-list {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 64px;
+		border-bottom: 1px solid #292926;
+		padding-bottom: 128px;
+		margin-bottom: 128px;
+
+		@media screen and (max-width: var.$desk-s) {
+			gap: 32px;
+		}
+
+		@media screen and (max-width: var.$tab-m) {
+			flex-direction: column;
+			gap: 48px;
+			padding-bottom: 96px;
+			margin-bottom: 96px;
+		}
+
+		@media screen and (max-width: var.$mob-l) {
+			padding-bottom: 64px;
+			margin-bottom: 64px;
+		}
+	}
+	&-item {
+		width: 33%;
+		text-align: center;
+		position: relative;
+		padding-top: 245px;
+		@media screen and (max-width: var.$tab-m) {
+			width: 100%;
+			padding-top: 24px;
+		}
+
+		&-title {
+			font-size: 104px;
+			font-weight: 700;
+			line-height: 1;
+			background-image: linear-gradient(to bottom, #8e9892, rgba(24, 24, 22, 0));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			margin-top: -32px;
+			letter-spacing: -1px;
+			font-family: var(--mabry-font);
+			margin-bottom: 14px;
+
+			@media screen and (max-width: var.$desk-s) {
+				font-size: 72px;
+			}
+		}
+
+		&-caption {
+			color: var(--moss-600);
+			font-size: 18px;
+			line-height: 1.5;
+			max-width: 300px;
+			margin: 0 auto;
+		}
+
+		img {
+			width: 300px;
+			height: 224px;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);
+			@media screen and (max-width: var.$tab-m) {
+				max-width: 100%;
+				position: static;
+				height: auto;
+				margin: 0 auto;
+				transform: none;
+			}
+		}
+	}
+}
