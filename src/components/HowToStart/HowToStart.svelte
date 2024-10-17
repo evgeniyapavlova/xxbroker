@@ -1,9 +1,14 @@
 <script>
+	import translation from '$lib/translations/how_to_start';
+
 	import HowToStartItem from './HowToStartItem.svelte';
 	import './scss/how-to-start.scss';
+
 	import itemsContent from './items';
 
-	export let content;
+	export let lang;
+
+	const content = translation[lang];
 	const { h2, items } = content;
 </script>
 

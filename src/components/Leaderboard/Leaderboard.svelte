@@ -1,10 +1,15 @@
 <script>
-	import Table from './Table.svelte';
+	import translation from '$lib/translations/leaderboard';
 
+	import Table from './Table.svelte';
 	import LiveTag from './LiveTag.svelte';
-	export let content;
+
 	import './scss/leaderboard.scss';
 	import './scss/pedestal.scss';
+
+	export let lang;
+
+	const content = translation[lang];
 </script>
 
 <section class="leaderboard" id="leaderboard">

@@ -15,42 +15,24 @@
 	import Logo from '$common/LogoFooter.svelte';
 
 	export let lang;
-
-	let isTranslationLoaded = false,
-		translation = {};
-
-	async function loadTranslations() {
-		if (!isTranslationLoaded) {
-			const module = await import(`$lib/translations/${lang}.js`);
-			translation = module.default;
-			isTranslationLoaded = true;
-		}
-	}
-
-	onMount(async () => {
-		loadTranslations();
-	});
 </script>
 
 <div class="main">
 	<div class="intro-bgr has-bgr" data-bgimage="{base}/images/bgr/intro_bgr.svg">
-		<Header content={translation.header} {lang} />
-		<Intro content={translation.intro} {lang} />
+		<Header {lang} />
+		<Intro {lang} />
 	</div>
-	{#if isTranslationLoaded}
-		<Leaderboard content={translation.leaderboard} />
-		<HowToStart content={translation.how_to_start} />
-	{/if}
+	<Leaderboard {lang} />
+	<HowToStart {lang} />
 
 	<People />
+	<Conditions {lang} />
+	<Features {lang} />
 
-	{#if isTranslationLoaded}
-		<Conditions content={translation.conditions} />
-		<Features content={translation.features} />
-		<Achievements content={translation.achievements} />
-		<Reviews content={translation.reviews} />
-		<Footer content={translation.footer} />
-	{/if}
+	<Achievements {lang} />
+
+	<Reviews {lang} />
+	<Footer {lang} />
 </div>
 
 <section class="footer-logo">

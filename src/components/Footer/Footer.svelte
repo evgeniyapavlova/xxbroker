@@ -1,7 +1,11 @@
 <script>
+	import translation from '$lib/translations/footer';
+
 	import './scss/footer.scss';
 
-	export let content;
+	export let lang;
+	const content = translation[lang];
+
 	let currentYear = new Date().getFullYear();
 </script>
 

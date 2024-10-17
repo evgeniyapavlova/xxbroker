@@ -1,4 +1,6 @@
 <script>
+	import translation from '$lib/translations/achievements';
+
 	import AchievementItem from './AchievementItem.svelte';
 
 	import './scss/achievements.scss';
@@ -7,8 +9,8 @@
 	import award_2 from './img/award_2.webp';
 	import award_3 from './img/award_3.webp';
 
-	export let content;
-	const { h2, caption, items } = content;
+	export let lang;
+	const { h2, caption, items } = translation[lang];
 
 	const data = [
 		{

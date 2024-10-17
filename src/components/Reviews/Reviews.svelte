@@ -1,13 +1,17 @@
 <script>
 	import { inview } from 'svelte-inview';
-	import './scss/reviews.scss';
-	import Review from './Review.svelte';
-	import heart from './img/heart.svg';
+	import translation from '$lib/translations/reviews';
 	import { data } from './data';
+
+	import Review from './Review.svelte';
+
+	import heart from './img/heart.svg';
 	import photos from './img';
 
-	export let content;
-	const { h2, caption, items } = content;
+	import './scss/reviews.scss';
+
+	export let lang;
+	const { h2, caption, items } = translation[lang];
 
 	let isInView;
 	const options = {

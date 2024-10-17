@@ -1,16 +1,18 @@
 <script>
 	import { inview } from 'svelte-inview';
+	import translation from '$lib/translations/conditions';
+
+	import MethodsList from './MethodsList.svelte';
 
 	import './scss/conditions.scss';
+
 	import img1 from './img/img1.webp';
 	import img2 from './img/img2.webp';
 	import img3 from './img/img3.webp';
 
-	import MethodsList from './MethodsList.svelte';
+	export let lang;
 
-	export let content;
-
-	const { h2, items, h2_2 } = content;
+	const { h2, items, h2_2 } = translation[lang];
 
 	const itemsData = [
 		{ img: img1, title: '$10k' },
