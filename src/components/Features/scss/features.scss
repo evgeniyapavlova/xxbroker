@@ -1,0 +1,57 @@
+@use '$lib/styles/_constants' as var;
+
+.features {
+	@media screen and (max-width: var.$desk-s) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.content {
+		max-width: 1102px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 96px;
+	}
+	&-content-wrap {
+		border-radius: 72px;
+		background: radial-gradient(
+				82.01% 25.96% at 50% 100%,
+				rgba(39, 140, 80, 0.05) 0%,
+				rgba(21, 26, 23, 0) 100%
+			),
+			radial-gradient(76.24% 28.2% at 50% 0%, rgba(39, 140, 80, 0.1) 0%, rgba(21, 26, 23, 0) 100%),
+			#151a17;
+		border-radius: 72px;
+		padding-top: 128px;
+		padding-bottom: 128px;
+		padding: 128px 40px;
+		overflow: hidden;
+		@media screen and (max-width: var.$desk-s) {
+			border-radius: 64px;
+			padding: 128px 32px;
+		}
+		@media screen and (max-width: var.$tab-m) {
+			border-radius: 48px;
+			padding: 96px 16px;
+		}
+		@media screen and (max-width: var.$mob-l) {
+			padding: 88px 16px;
+		}
+		@media screen and (max-width: 380px) {
+			border-radius: 32px;
+		}
+	}
+	h2 {
+		position: relative;
+		margin-bottom: 16px;
+	}
+	.caption {
+		color: #717171;
+		text-align: center;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+}

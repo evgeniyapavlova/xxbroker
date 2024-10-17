@@ -1,0 +1,164 @@
+@use '$lib/styles/_constants' as var;
+
+.feature {
+	&-item {
+		display: flex;
+		align-items: stretch;
+		justify-content: flex-start;
+		gap: 24px;
+	}
+	&-animation {
+		width: 470px;
+	}
+	&-content {
+		flex-grow: 1;
+		padding: 40px 0;
+		@include var.flex-col;
+	}
+	&-title {
+		color: var(--moss-800);
+		font-feature-settings:
+			'liga' off,
+			'clig' off;
+		font-family: var(--mabry-font);
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 1.2;
+		margin-bottom: 8px;
+	}
+	&-caption {
+		color: var(--moss-600);
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+		max-width: 400px;
+		margin-bottom: 48px;
+	}
+	&-toggle-animation {
+		display: flex;
+		align-items: stretch;
+		justify-content: flex-start;
+		gap: 8px;
+	}
+	&-icon {
+		background: var(--moss-400);
+		@include var.flex-center;
+		@include var.vhSquare(52px);
+		border-radius: 52px;
+		margin-top: 40px;
+	}
+
+	&-item .toggle-btn {
+		gap: 10px;
+		padding: 16px 12px;
+		border-radius: 16px;
+		align-items: center;
+		min-width: 92px;
+		@include var.flex-col;
+		cursor: pointer;
+		transition: background-color 0.1s ease-in-out;
+
+		&.active,
+		&:hover {
+			background-color: var(--moss-200);
+		}
+
+		&.active {
+			span {
+				font-weight: 600;
+				color: var(--moss-800);
+			}
+		}
+		span {
+			color: var(--moss-600);
+			font-size: 14px;
+			line-height: 18px;
+			transition:
+				color 0.1s ease-in-out,
+				font-weight 0.1s ease-in-out;
+		}
+	}
+}
+
+.feature-item {
+	.icon-wrap {
+		border-radius: 16px;
+		background: var(--moss-300);
+		border-radius: 16px;
+		@include var.vhSquare(52px);
+		@include var.flex-center;
+	}
+	.feature-toggle-account {
+		@include var.flex-col;
+		gap: 8px;
+		&:has(.real:hover) {
+			.practice {
+				opacity: 0.7;
+			}
+		}
+		button {
+			width: 290px;
+			padding: 8px 12px 8px 8px;
+			border-radius: 16px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+			&.practice {
+				background-color: var(--moss-200);
+				transition: opacity 0.2s ease-in-out;
+				.checkmark {
+					background-color: var(--moss-400);
+				}
+			}
+			&.real {
+				border: 1px solid var(--moss-200);
+				position: relative;
+
+				.checkmark {
+					border: 1px solid var(--moss-400);
+				}
+
+				&:hover {
+					.real-account-tooltip {
+						opacity: 1;
+					}
+				}
+			}
+
+			.real-account-tooltip {
+				position: absolute;
+				padding: 20px;
+				background-color: var(--moss-200);
+				border-radius: 12px;
+				left: -8px;
+				right: -8px;
+				top: 50%;
+				margin-top: -25%;
+				text-align: left;
+				opacity: 0;
+				transition: opacity 0.2s ease-in-out;
+
+				a {
+					margin-top: 12px;
+					display: block;
+					width: fit-content;
+				}
+			}
+			span {
+				flex-grow: 1;
+				text-align: left;
+				color: var(--oss-800);
+				font-size: 16px;
+				font-weight: 600;
+				line-height: normal;
+			}
+			.checkmark {
+				@include var.vhSquare(20px);
+				@include var.flex-center;
+				border-radius: 20px;
+			}
+		}
+	}
+}
