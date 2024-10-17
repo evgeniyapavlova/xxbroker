@@ -1,4 +1,5 @@
 <script>
+	import { lang } from '$lib/stores/lang';
 	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import { writable } from 'svelte/store';
@@ -6,9 +7,16 @@
 	import leaderboard from './img/icons/leaderboard.svelte';
 	import chats from './img/icons/chats.svelte';
 
-	import FeatureAnimation from './FeatureAnimation.svelte';
+	const translation = {
+		en: {
+			title: 'Investors community',
+			caption:
+				'Multi-charting, 100+ indicators, widgets, and graphical tools for supreme price analysis.',
+			items: ['Leader-<br />board', 'Chats &<br />Support']
+		}
+	};
 
-	export let content;
+	const content = translation[$lang];
 	const { title, caption } = content;
 
 	const animations = ['6_leaderboard', '7_chat_support'];
@@ -72,7 +80,7 @@
 		{#if FeatureAnimationComponent}
 			<svelte:component
 				this={FeatureAnimationComponent}
-				id="feature-3"
+				id="feature-3-animation"
 				bind:path={currentAnimationPath}
 			/>
 		{/if}
