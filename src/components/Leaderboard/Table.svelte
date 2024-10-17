@@ -1,4 +1,5 @@
 <script>
+	import { inview } from 'svelte-inview';
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
 	import { tick } from 'svelte';
@@ -120,9 +121,17 @@
 		const interval = setInterval(animateTableUpdate, 3000);
 		return () => clearInterval(interval);
 	});
+
+	let isInView;
+	const options = {
+		rootMargin: '5%',
+		threshold: '0.4',
+		unobserveOnEnter: true
+	};
+	const handleChange = ({ detail }) => (isInView = detail.inView);
 </script>
 
-<div class="pedestal">
+<div class="pedestal" use:inview={options} on:inview_change={handleChange}>
 	{#each [1, 2, 3] as item, index}
 		<div class="pedestal-item-wrap">
 			<img src="{base}/images/leaderboard/crown.png" alt="" class="pedestal-crown" />
@@ -139,7 +148,7 @@
 			</div>
 			<div class="pedestal-item">
 				<div class="pedestal-block"></div>
-				<div class="number number-italic">{item}</div>
+				<div class="number number-{index} number-italic" class:visible={isInView}>{item}</div>
 			</div>
 		</div>
 	{/each}
@@ -188,3 +197,24 @@
 		{/each}
 	</tbody>
 </table>
+
+<style>
+	.number.visible {
+		opacity: 0.5;
+		transform: translateY(0);
+	}
+
+	.number {
+		opacity: 0;
+		transform: translateY(50px);
+		transition:
+			opacity 1s ease,
+			transform 1s ease;
+	}
+	.number-1 {
+		transition-delay: 0.05s;
+	}
+	.number-2 {
+		transition-delay: 0.1s;
+	}
+</style>
