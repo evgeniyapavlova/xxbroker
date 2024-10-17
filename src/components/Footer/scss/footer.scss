@@ -1,0 +1,68 @@
+@use '$lib/styles/_constants' as var;
+
+footer {
+	border-top: 1px solid rgba(79, 78, 80, 0.2);
+	padding: 40px 0;
+	display: flex;
+	gap: 32px;
+	color: var(--moss-600);
+	@include var.flex-col;
+}
+
+.footer {
+	&-title {
+		color: var(--moss-700);
+		font-weight: 500;
+	}
+	&-links {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 12px 0;
+		@media screen and (max-width: var.$desk-s) {
+			flex-wrap: wrap;
+			gap: 48px;
+		}
+		@media screen and (max-width: 600px) {
+			flex-direction: column;
+		}
+		a {
+			display: inline-block;
+			border-bottom: 1px solid #4f4e50;
+		}
+		&-block {
+			@include var.flex-col;
+			align-items: flex-start;
+			gap: 16px;
+			@media screen and (max-width: var.$desk-s) {
+				width: calc(50% - 24px);
+			}
+			@media screen and (max-width: 600px) {
+				width: 100%;
+			}
+		}
+	}
+	&-address {
+		padding: 32px 0;
+
+		line-height: 1.5;
+	}
+	&-info {
+		padding: 10px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media screen and (max-width: var.$mob-l) {
+			flex-direction: column;
+			gap: 18px;
+			align-items: flex-start;
+		}
+	}
+	&-logo {
+		svg {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+}

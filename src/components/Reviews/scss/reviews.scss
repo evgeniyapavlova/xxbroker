@@ -19,12 +19,28 @@
 		gap: 24px;
 		max-width: 972px;
 		margin: 0 auto;
+		@media screen and (max-width: var.$desk-s) {
+			flex-direction: column;
+		}
+		@media screen and (max-width: var.$tab-m) {
+			gap: 16px;
+		}
 	}
 	&-block {
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
 		width: 100%;
+		@media screen and (max-width: var.$desk-s) {
+			flex-direction: row;
+		}
+		@media screen and (max-width: var.$tab-m) {
+			gap: 16px;
+		}
+		@media screen and (max-width: 600px) {
+			gap: 16px;
+			flex-direction: column;
+		}
 	}
 }
 
@@ -37,6 +53,12 @@
 	align-items: flex-start;
 	gap: 24px;
 	overflow: hidden;
+	@media screen and (max-width: var.$desk-s) {
+		width: 50%;
+	}
+	@media screen and (max-width: 600px) {
+		width: 100%;
+	}
 
 	&-primary {
 		color: var(--moss-800);

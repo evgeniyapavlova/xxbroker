@@ -11,6 +11,8 @@
 	import Features from './Features/Features.svelte';
 	import Achievements from './Achievements/Achievements.svelte';
 	import Reviews from './Reviews/Reviews.svelte';
+	import Footer from './Footer/Footer.svelte';
+	import Logo from '$common/LogoFooter.svelte';
 
 	export let lang;
 
@@ -31,7 +33,7 @@
 </script>
 
 <div class="main">
-	<div style="background-image: url({base}/images/bgr/intro_bgr.svg);" class="intro-bgr">
+	<!-- <div style="background-image: url({base}/images/bgr/intro_bgr.svg);" class="intro-bgr">
 		{#if isTranslationLoaded}
 			<Header content={translation.header} />
 			<Intro content={translation.intro} />
@@ -42,15 +44,19 @@
 		<HowToStart content={translation.how_to_start} />
 	{/if}
 
-	<People />
+	<People /> -->
 
 	{#if isTranslationLoaded}
-		<Conditions content={translation.conditions} />
+		<!-- <Conditions content={translation.conditions} />
 		<Features content={translation.features} />
-		<Achievements content={translation.achievements} />
-		<Reviews content={translation.reviews} />
+		<Achievements content={translation.achievements} />-->
+		<!-- <Reviews content={translation.reviews} /> -->
+		<Footer content={translation.footer} />
 	{/if}
 </div>
+<section class="footer-logo">
+	<Logo />
+</section>
 
 <style>
 	.intro-bgr {
