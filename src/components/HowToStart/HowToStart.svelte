@@ -12,13 +12,11 @@
 	const { h2, items } = content;
 </script>
 
-<section id="start">
-	<h2>
-		{h2}
-	</h2>
-	<div class="start-list">
-		{#each items as item, index}
-			<HowToStartItem {index} {item} content={itemsContent[index]} />
-		{/each}
-	</div>
-</section>
+<h2>
+	{h2}
+</h2>
+<div class="start-list">
+	{#each items as item, index}
+		<HowToStartItem {index} {item} content={itemsContent[index]} />
+	{/each}
+</div>

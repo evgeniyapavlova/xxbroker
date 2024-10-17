@@ -12,13 +12,11 @@
 	const content = translation[lang];
 </script>
 
-<section class="leaderboard" id="leaderboard">
-	<div class="leaderboard-content-wrap">
-		<LiveTag>{content.live}</LiveTag>
-		<div class="content">
-			<h2>{content.h2}</h2>
+<div class="leaderboard-content-wrap">
+	<LiveTag>{content.live}</LiveTag>
+	<div class="content">
+		<h2>{content.h2}</h2>
 
-			<Table content={content.table_head} buy={content.buy} sell={content.sell} />
-		</div>
+		<Table content={content.table_head} buy={content.buy} sell={content.sell} />
 	</div>
-</section>
+</div>

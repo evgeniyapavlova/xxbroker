@@ -31,13 +31,11 @@
 	];
 </script>
 
-<section class="achievements" id="awards">
-	<div class="title">
-		<h2>{@html h2}</h2>
-		<div class="caption">{caption}</div>
-	</div>
-	<div class="achievements-list">
-		{#each items as item, index}
-			<AchievementItem {index} data={data[index]} {item} />{/each}
-	</div>
-</section>
+<div class="title">
+	<h2>{@html h2}</h2>
+	<div class="caption">{caption}</div>
+</div>
+<div class="achievements-list">
+	{#each items as item, index}
+		<AchievementItem {index} data={data[index]} {item} />{/each}
+</div>

@@ -1,4 +1,6 @@
 <script>
+	import Logo from '$common/LogoFooter.svelte';
+
 	import translation from '$lib/translations/footer';
 
 	import './scss/footer.scss';
@@ -27,4 +29,7 @@
 			<span>XXBroker, 2015–{currentYear}</span>
 		</div>
 	</footer>
+	<div class="footer-logo">
+		<Logo />
+	</div>
 </section>
