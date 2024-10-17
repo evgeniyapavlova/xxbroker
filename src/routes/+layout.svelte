@@ -6,6 +6,7 @@
 	import { linkLogin, linkRegister, linkTraderoom } from '$lib/stores/reg_link';
 
 	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
+	import { scrollToAnchorLinks } from '$lib/utils/scrollToAnchorLinks';
 
 	import '$lib/styles/_constants.scss';
 	import '$lib/styles/fonts.css';
@@ -21,6 +22,8 @@
 		$linkRegister += $lang + '/register' + $searchString;
 		$linkLogin += $lang + '/login' + $searchString;
 		$linkTraderoom += $lang + $searchString;
+
+		scrollToAnchorLinks();
 	});
 </script>
 
