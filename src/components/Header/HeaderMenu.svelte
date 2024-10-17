@@ -1,16 +1,22 @@
 <script>
+	import { onMount } from 'svelte';
 	import Tag from '$common/Tag.svelte';
 	import Dropdown from '$common/Dropdown/Dropdown.svelte';
+	import { scrollToAnchorLinks } from '$lib/utils/scrollToAnchorLinks';
 
 	const menuLinks = ['leaderboard', 'start', 'features', 'awards'];
 
 	export let content;
+
+	onMount(() => {
+		scrollToAnchorLinks('.header-menu .anchor-link');
+	});
 </script>
 
 <div class="header-menu">
 	<div class="header-menu-desktop">
 		{#each content.menu as item, index}
-			<a class="nav-link" href="#{menuLinks[index]}">
+			<a class="nav-link anchor-link" href="#{menuLinks[index]}">
 				{item}
 				{#if index === 0}
 					<Tag>{content.new}</Tag>
@@ -27,7 +33,7 @@
 			</svelte:fragment>
 			<svelte:fragment slot="content">
 				{#each content.menu as item, index}
-					<a class="button-secondary button-medium" href="#{menuLinks[index]}">
+					<a class="button-secondary button-medium anchor-link" href="#{menuLinks[index]}">
 						{item}
 						{#if index === 0}
 							<Tag>{content.new}</Tag>

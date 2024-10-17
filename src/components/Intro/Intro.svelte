@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Platform from './Platform.svelte';
 	import Devices from './Devices.svelte';
+	import Button from '$common/Button.svelte';
 	import './scss/intro.scss';
 	export let content;
 
@@ -42,9 +43,7 @@
 			<div class="h1-caption">
 				{h1_caption}
 			</div>
-			<div class="button button-primary button-large">
-				{button}
-			</div>
+			<Button />
 		</div>
 		<Platform />
 		<Devices content={{ available_on_devices, available_on_devices_caption }} />

@@ -29,7 +29,7 @@
 	];
 </script>
 
-<section class="achievements" id="achievements">
+<section class="achievements" id="awards">
 	<div class="title">
 		<h2>{@html h2}</h2>
 		<div class="caption">{caption}</div>

@@ -92,8 +92,8 @@ export default {
 					date: '2:15 AM · May 28, 2023'
 				},
 				{
-					text: 'Thank you @XXBroker support team for sorting out my deposit issue 🙏 So polite and professional!',
-					date: '2:15 AM · May 28, 2023'
+					text: 'Simple and beautiful platform. Everything you need, nothing extra. The mobile version is super 🔥',
+					date: '2:15 AM · May 4, 2023'
 				}
 			],
 			[
