@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import { writable } from 'svelte/store';
 	import icon from './img/icons/users.svg';
@@ -15,9 +16,11 @@
 	const icons = [leaderboard, chats];
 
 	const activeAnimation = writable(0);
+	let currentAnimationPath = animations[0];
 
 	const setActiveAnimation = (index) => {
 		$activeAnimation = index;
+		currentAnimationPath = animations[index];
 	};
 
 	let isInView;
@@ -26,6 +29,15 @@
 		unobserveOnEnter: true
 	};
 	const handleChange = ({ detail }) => (isInView = detail.inView);
+
+	let FeatureAnimationComponent;
+	async function loadAnimationComponent() {
+		const module = await import('./FeatureAnimation.svelte');
+		FeatureAnimationComponent = module.default;
+	}
+	onMount(async () => {
+		loadAnimationComponent();
+	});
 </script>
 
 <div class="feature-item" id="feature-3" use:inview={options} on:inview_change={handleChange}>
@@ -55,14 +67,15 @@
 			{/each}
 		</div>
 	</div>
+
 	<div class="feature-animation">
-		{#each animations as animation, index}
-			<FeatureAnimation
-				isActive={$activeAnimation === index}
-				id="feature-3-{index}"
-				bind:path={animation}
+		{#if FeatureAnimationComponent}
+			<svelte:component
+				this={FeatureAnimationComponent}
+				id="feature-3"
+				bind:path={currentAnimationPath}
 			/>
-		{/each}
+		{/if}
 	</div>
 </div>
 

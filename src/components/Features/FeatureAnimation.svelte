@@ -1,34 +1,45 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import { base } from '$app/paths';
-	import { onMount, onDestroy } from 'svelte';
-	import lottie from 'lottie-web';
+	import { inview } from 'svelte-inview';
+	import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
-	export let id, path, isActive;
+	let isInView;
+	const options = {
+		threshold: 0.8
+	};
+	const handleChange = ({ detail }) => {
+		isInView = detail.inView;
 
-	onMount(() => {
-		lottie.loadAnimation({
-			container: document.getElementById(`lottie-container-${id}`),
-			renderer: 'svg',
-			loop: true,
-			autoplay: true,
-			path: `${base}/animations/${path}.json`
-		});
-	});
+		if (lottieInstance) {
+			if (isInView) {
+				lottieInstance.play();
+			} else {
+				lottieInstance.pause();
+			}
+		}
+	};
+
+	export let path;
+
+	let lottieInstance;
 
 	onDestroy(() => {
-		if (animation) {
-			animation.destroy();
-		}
+		lottieInstance.destroy();
 	});
 </script>
 
-<div id="lottie-container-{id}" class:active={isActive}></div>
-
-<style>
-	div {
-		display: none;
-	}
-	div.active {
-		display: block;
-	}
-</style>
+<div use:inview={options} on:inview_change={handleChange}>
+	<LottiePlayer
+		src={`${base}/animations/${path}.json`}
+		autoplay={true}
+		loop={true}
+		controls={false}
+		renderer="svg"
+		background="transparent"
+		height={496}
+		width={471}
+		setSubframe={false}
+		bind:this={lottieInstance}
+	/>
+</div>
