@@ -1,4 +1,6 @@
 <script>
+	import { inview } from 'svelte-inview';
+
 	import icon from './img/icons/redo.svg';
 	import checkmark from './img/icons/checkmark.svelte';
 	import practice from './img/icons/practice.svelte';
@@ -11,10 +13,17 @@
 
 	export let content;
 	const { title, caption } = content;
+
+	let isInView;
+	const options = {
+		threshold: 0.5,
+		unobserveOnEnter: true
+	};
+	const handleChange = ({ detail }) => (isInView = detail.inView);
 </script>
 
-<div class="feature-item" id="feature-2">
-	<div class="feature-icon">
+<div class="feature-item" id="feature-2" use:inview={options} on:inview_change={handleChange}>
+	<div class="feature-icon" class:visible={isInView}>
 		<img src={icon} alt="Analysis tools feature icon" />
 	</div>
 

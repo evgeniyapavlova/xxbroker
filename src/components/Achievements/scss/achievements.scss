@@ -1,0 +1,89 @@
+@use '$lib/styles/_constants' as var;
+
+.achievements {
+	.title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 64px;
+		@media screen and (max-width: var.$desk-s) {
+			flex-direction: column;
+			gap: 32px;
+		}
+	}
+	h2 {
+		max-width: 50%;
+		text-align: left;
+		@media screen and (max-width: var.$desk-s) {
+			max-width: 100%;
+			text-align: center;
+		}
+	}
+	.caption {
+		max-width: 380px;
+		color: var(--moss-600);
+		font-size: 20px;
+		line-height: 1.5;
+		@media screen and (max-width: var.$desk-s) {
+			text-align: center;
+		}
+	}
+	&-list {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		gap: 28px;
+		@media screen and (max-width: var.$desk-s) {
+			flex-direction: column;
+			max-width: 430px;
+			margin: 0 auto;
+		}
+	}
+	.achievement {
+		border-radius: 36px;
+		background: var(--moss-200);
+		width: 100%;
+		padding: 36px;
+		@include var.flex-col;
+		height: 450px;
+		background-repeat: no-repeat;
+		background-position: right 32px bottom 32px;
+		background-size: 144px auto;
+
+		@media screen and (max-width: var.$mob-l) {
+			padding: 24px;
+			height: 430px;
+		}
+
+		&-0 {
+			background-size: 114px auto;
+		}
+
+		&-1 {
+			background-size: 143px auto;
+		}
+
+		&-2 {
+			background-size: 120px auto;
+		}
+
+		&-secondary-text {
+			color: #717171;
+			font-size: 18px;
+			line-height: 1.5;
+			letter-spacing: -0.25px;
+		}
+		&-year {
+			margin-bottom: 20px;
+		}
+		&-title {
+			margin-top: 16px;
+			flex-grow: 1;
+			color: #dbdcde;
+			font-family: var(--mabry-font);
+			font-size: 28px;
+			font-weight: 500;
+			line-height: 1.3;
+		}
+	}
+}
