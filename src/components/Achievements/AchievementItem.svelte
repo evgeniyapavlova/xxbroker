@@ -13,8 +13,8 @@
 </script>
 
 <div
-	class="achievement achievement-{index}"
-	style="background-image: url({data.image})"
+	class="achievement achievement-{index} has-bgr"
+	data-bgimage={data.image}
 	use:inview={options}
 	on:inview_change={handleChange}
 >

@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import { writable } from 'svelte/store';
 	import NextFeatureButton from './NextFeatureButton.svelte';
@@ -18,9 +19,11 @@
 	const icons = [chart_type, time_period, graphic_tools, indicators];
 
 	const activeAnimation = writable(0);
+	let currentAnimationPath = animations[0];
 
 	const setActiveAnimation = (index) => {
 		$activeAnimation = index;
+		currentAnimationPath = animations[index];
 	};
 
 	let isInView;
@@ -29,6 +32,15 @@
 		unobserveOnEnter: true
 	};
 	const handleChange = ({ detail }) => (isInView = detail.inView);
+
+	let FeatureAnimationComponent;
+	async function loadAnimationComponent() {
+		const module = await import('./FeatureAnimation.svelte');
+		FeatureAnimationComponent = module.default;
+	}
+	onMount(async () => {
+		loadAnimationComponent();
+	});
 </script>
 
 <div class="feature-item" use:inview={options} on:inview_change={handleChange}>
@@ -60,13 +72,13 @@
 		<NextFeatureButton href="#feature-2" />
 	</div>
 	<div class="feature-animation">
-		{#each animations as animation, index}
-			<FeatureAnimation
-				isActive={$activeAnimation === index}
-				id="feature-1-{index}"
-				bind:path={animation}
+		{#if FeatureAnimationComponent}
+			<svelte:component
+				this={FeatureAnimationComponent}
+				id="feature-1"
+				bind:path={currentAnimationPath}
 			/>
-		{/each}
+		{/if}
 	</div>
 </div>
 

@@ -26,7 +26,7 @@
   },
   "type": "module",
   "dependencies": {
-    "lottie-web": "^5.12.2",
+    "@lottiefiles/svelte-lottie-player": "^0.3.1",
     "sass-embedded": "^1.79.3",
     "svelte-inview": "^4.0.2"
   }

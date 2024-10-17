@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 
 	import icon from './img/icons/redo.svg';
@@ -9,8 +10,6 @@
 
 	import NextFeatureButton from './NextFeatureButton.svelte';
 
-	import FeatureAnimation from './FeatureAnimation.svelte';
-
 	export let content;
 	const { title, caption } = content;
 
@@ -20,6 +19,15 @@
 		unobserveOnEnter: true
 	};
 	const handleChange = ({ detail }) => (isInView = detail.inView);
+
+	let FeatureAnimationComponent;
+	async function loadAnimationComponent() {
+		const module = await import('./FeatureAnimation.svelte');
+		FeatureAnimationComponent = module.default;
+	}
+	onMount(async () => {
+		loadAnimationComponent();
+	});
 </script>
 
 <div class="feature-item" id="feature-2" use:inview={options} on:inview_change={handleChange}>
@@ -49,6 +57,12 @@
 		<NextFeatureButton href="#feature-3" />
 	</div>
 	<div class="feature-animation">
-		<FeatureAnimation id="feature-2" path="5_practice_real_account" isActive />
+		{#if FeatureAnimationComponent}
+			<svelte:component
+				this={FeatureAnimationComponent}
+				id="feature-2"
+				path="5_practice_real_account"
+			/>
+		{/if}
 	</div>
 </div>
