@@ -1,6 +1,6 @@
 <script>
-	import { base, onDestroy } from '$app/paths';
-	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
+	import { onMount, onDestroy } from 'svelte';
 	import lottie from 'lottie-web';
 
 	export let id, path, isActive;
