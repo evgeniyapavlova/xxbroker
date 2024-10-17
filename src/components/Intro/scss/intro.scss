@@ -12,6 +12,7 @@
 
 	img {
 		max-width: 100%;
+		position: relative;
 	}
 
 	&-text-content {
@@ -58,6 +59,15 @@ h1 {
 }
 .platform-image-wrap {
 	position: relative;
+
+	.platform-img {
+		width: 100%;
+		padding-bottom: 56%;
+		svg,
+		img {
+			position: absolute;
+		}
+	}
 	@media screen and (max-width: var.$tab-m) {
 		width: 960px;
 		max-width: unset;

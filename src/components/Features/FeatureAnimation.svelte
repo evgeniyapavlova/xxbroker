@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { base, onDestroy } from '$app/paths';
 	import { onMount } from 'svelte';
 	import lottie from 'lottie-web';
 
@@ -13,6 +13,12 @@
 			autoplay: true,
 			path: `${base}/animations/${path}.json`
 		});
+	});
+
+	onDestroy(() => {
+		if (animation) {
+			animation.destroy();
+		}
 	});
 </script>
 

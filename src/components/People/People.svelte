@@ -21,13 +21,13 @@
 <div class="people">
 	<div class="content" use:inview={options} on:inview_change={handleChange}>
 		{#if isInView}
-			<img src={img1} alt="Girl with iPad" class="people-img-1" />
+			<img src={img1} alt="Girl with iPad" class="people-img-1" loading="lazy" />
 			<div>
-				<img src={img2} alt="Man with laptop" class="people-img-2" />
-				<img src={img3} alt="Man with laptop" class="people-img-3" />
+				<img src={img2} alt="Man with laptop" class="people-img-2" loading="lazy" />
+				<img src={img3} alt="Man with laptop" class="people-img-3" loading="lazy" />
 			</div>
-			<img src={img4} alt="Man with mobile phone" class="people-img-4" />
-			<img src={img5} alt="Girl with laptop" class="people-img-5" />
+			<img src={img4} alt="Man with mobile phone" class="people-img-4" loading="lazy" />
+			<img src={img5} alt="Girl with laptop" class="people-img-5" loading="lazy" />
 		{:else}
 			<div style="height: 600px;"></div>
 		{/if}
