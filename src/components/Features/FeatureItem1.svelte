@@ -1,4 +1,5 @@
 <script>
+	import { lang } from '$lib/stores/lang';
 	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import { writable } from 'svelte/store';
@@ -9,9 +10,17 @@
 	import indicators from './img/icons/indicators.svelte';
 	import time_period from './img/icons/time_period.svelte';
 
-	import FeatureAnimation from './FeatureAnimation.svelte';
+	const translation = {
+		en: {
+			title: 'Analysis tools',
+			caption:
+				'Multi-charting, 100+ indicators, widgets, and graphical tools for supreme price analysis.',
+			items: ['Chart<br />type', 'Time<br />period', 'Graphic<br />tools', 'Indica&shy;tors']
+		}
+	};
 
-	export let content;
+	const content = translation[$lang];
+
 	const { title, caption } = content;
 
 	const animations = ['1_chart_type', '2_time_frame', '3_chart_type', '4_chart_analisys'];
@@ -75,7 +84,7 @@
 		{#if FeatureAnimationComponent}
 			<svelte:component
 				this={FeatureAnimationComponent}
-				id="feature-1"
+				id="feature-1-animation"
 				bind:path={currentAnimationPath}
 			/>
 		{/if}

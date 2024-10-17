@@ -1,4 +1,5 @@
 <script>
+	import { lang } from '$lib/stores/lang';
 	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 
@@ -10,7 +11,19 @@
 
 	import NextFeatureButton from './NextFeatureButton.svelte';
 
-	export let content;
+	const translation = {
+		en: {
+			title: 'Refillable demo account',
+			caption:
+				'Stress-test your strategies on the $10K Practice account. No expiration, no pressure.',
+			items: ['Practice', 'Real'],
+			switch: 'To switch to the Real account, please sign up',
+			sign_up: 'Sign up'
+		}
+	};
+
+	const content = translation[$lang];
+
 	const { title, caption } = content;
 
 	let isInView;
@@ -60,7 +73,7 @@
 		{#if FeatureAnimationComponent}
 			<svelte:component
 				this={FeatureAnimationComponent}
-				id="feature-2"
+				id="feature-2-animation"
 				path="5_practice_real_account"
 			/>
 		{/if}

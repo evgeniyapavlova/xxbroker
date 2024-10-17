@@ -1,15 +1,31 @@
 <script>
+	import { onMount } from 'svelte';
 	import translation from '$lib/translations/features';
+	import FeaturesContent from './FeaturesContent.svelte';
 
 	import './scss/features.scss';
 	import './scss/feature-item.scss';
 
-	import FeatureItem1 from './FeatureItem1.svelte';
-	import FeatureItem2 from './FeatureItem2.svelte';
-	import FeatureItem3 from './FeatureItem3.svelte';
-
 	export let lang;
 	const content = translation[lang];
+
+	let isScriptLoaded = false;
+
+	function loadDeferScript() {
+		const script = document.createElement('script');
+		script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie_svg.min.js';
+		script.defer = true;
+
+		script.onload = () => {
+			isScriptLoaded = true;
+		};
+
+		document.body.appendChild(script);
+	}
+
+	onMount(() => {
+		loadDeferScript();
+	});
 </script>
 
 <div class="features-content-wrap">
@@ -18,8 +34,8 @@
 			<h2>{content.h2}</h2>
 			<div class="caption">{content.caption}</div>
 		</div>
-		<FeatureItem1 content={content.items[0]} />
-		<FeatureItem2 content={content.items[1]} />
-		<FeatureItem3 content={content.items[2]} />
+		{#if isScriptLoaded}
+			<FeaturesContent />
+		{/if}
 	</div>
 </div>

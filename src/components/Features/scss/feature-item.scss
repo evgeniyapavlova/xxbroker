@@ -14,9 +14,11 @@
 	}
 	&-animation {
 		width: 470px;
+		height: 496px;
 		@media screen and (max-width: var.$desk-s) {
 			margin-top: 72px;
 			max-width: 100%;
+			height: auto;
 		}
 	}
 	&-content {

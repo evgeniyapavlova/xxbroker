@@ -1,7 +1,7 @@
 <script>
 	import Logo from '$common/LogoFooter.svelte';
 
-	import translation from '$lib/translations/footer';
+	import translation, { links } from '$lib/translations/footer';
 
 	import './scss/footer.scss';
 
@@ -14,11 +14,11 @@
 <section class="footer">
 	<footer>
 		<div class="footer-links">
-			{#each content.items as item}
+			{#each content.items as item, index1}
 				<div class="footer-links-block">
 					<div class="footer-title">{item.title}</div>
-					{#each item.items as item}
-						<a href="#" target="_blank" class="footer-link">{item}</a>
+					{#each item.items as item, index2}
+						<a href={links[index1].items[index2]} target="_blank" class="footer-link">{item}</a>
 					{/each}
 				</div>
 			{/each}
