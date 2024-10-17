@@ -28,7 +28,12 @@
 <div class="methods-list-container">
 	<div class="marquee">
 		{#each methods as method, index}
-			<img src={method} alt="Payment method - {methodsNames[index]}" class="marquee__item" />
+			<img
+				src={method}
+				alt="Payment method - {methodsNames[index]}"
+				class="marquee__item"
+				loading="lazy"
+			/>
 		{/each}
 	</div>
 </div>

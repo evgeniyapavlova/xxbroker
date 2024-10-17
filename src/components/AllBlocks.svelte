@@ -4,14 +4,6 @@
 
 	import Header from '$comps/Header/Header.svelte';
 	import Intro from '$comps/Intro/Intro.svelte';
-	import Leaderboard from './Leaderboard/Leaderboard.svelte';
-	import HowToStart from './HowToStart/HowToStart.svelte';
-	import People from './People/People.svelte';
-	import Conditions from './Conditions/Conditions.svelte';
-	import Features from './Features/Features.svelte';
-	import Achievements from './Achievements/Achievements.svelte';
-	import Reviews from './Reviews/Reviews.svelte';
-	import Footer from './Footer/Footer.svelte';
 
 	export let lang;
 

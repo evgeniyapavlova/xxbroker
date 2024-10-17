@@ -15,7 +15,14 @@
 
 <div class="review review-{index1}-{index2}" use:inview={options} on:inview_change={handleChange}>
 	<div class="review-author">
-		<img src={photo} class="review-avatar" alt="Avatar of the reviewer" width="40" height="40" />
+		<img
+			src={photo}
+			class="review-avatar"
+			alt="Avatar of the reviewer"
+			width="40"
+			height="40"
+			loading="lazy"
+		/>
 		<div>
 			<div class="review-primary">{data.name}</div>
 			<div class="review-seconary">{data.nickname}</div>

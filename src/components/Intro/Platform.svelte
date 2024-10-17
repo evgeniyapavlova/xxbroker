@@ -31,7 +31,7 @@
 	<div class="platform-img">
 		<MainPlatformGhost />
 		{#if isInView}
-			<img src="{base}/images/main-platform.webp" alt="XXBroker Platform" loading="lazy" />
+			<img src="{base}/images/main-platform.webp" alt="XXBroker Platform" />
 		{/if}
 	</div>
 </div>
