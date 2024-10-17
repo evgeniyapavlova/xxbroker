@@ -10,3 +10,19 @@ $tab-m: 720px;
 $tab-s: 484px;
 $mob-l: 393px;
 $mob-m: 320px;
+
+@mixin vhSquare($w) {
+	width: $w;
+	height: $w;
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin flex-col {
+	display: flex;
+	flex-direction: column;
+}

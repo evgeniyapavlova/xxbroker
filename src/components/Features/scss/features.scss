@@ -1,7 +1,7 @@
 @use '$lib/styles/_constants' as var;
 
 .features {
-	@media screen and (max-width: var.$desk-s) {
+	@media screen and (max-width: 380px) {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -13,16 +13,20 @@
 		display: flex;
 		flex-direction: column;
 		gap: 96px;
+		@media screen and (max-width: var.$desk-s) {
+			gap: 64px;
+		}
 	}
 	&-content-wrap {
 		border-radius: 72px;
-		background: radial-gradient(
+		background-color: var(--moss-100);
+		border-radius: 72px;
+		background-image: radial-gradient(
 				82.01% 25.96% at 50% 100%,
 				rgba(39, 140, 80, 0.05) 0%,
 				rgba(21, 26, 23, 0) 100%
 			),
-			radial-gradient(76.24% 28.2% at 50% 0%, rgba(39, 140, 80, 0.1) 0%, rgba(21, 26, 23, 0) 100%),
-			#151a17;
+			radial-gradient(76.24% 28.2% at 50% 0%, rgba(39, 140, 80, 0.1) 0%, rgba(21, 26, 23, 0) 100%);
 		border-radius: 72px;
 		padding-top: 128px;
 		padding-bottom: 128px;

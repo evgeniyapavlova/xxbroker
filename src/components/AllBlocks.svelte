@@ -8,6 +8,7 @@
 	import HowToStart from './HowToStart/HowToStart.svelte';
 	import People from './People/People.svelte';
 	import Conditions from './Conditions/Conditions.svelte';
+	import Features from './Features/Features.svelte';
 
 	export let lang;
 
@@ -43,6 +44,7 @@
 
 	{#if isTranslationLoaded}
 		<Conditions content={translation.conditions} />
+		<Features content={translation.features} />
 	{/if}
 </div>
 

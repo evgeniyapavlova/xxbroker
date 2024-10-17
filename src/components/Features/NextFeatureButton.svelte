@@ -34,6 +34,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+		padding-top: 40px;
 	}
 	a {
 		color: var(--moss-800);
@@ -61,5 +62,10 @@
 	}
 	a:hover {
 		transform: translateY(2px);
+	}
+	@media screen and (max-width: 1024px) {
+		.next-feature-wrap {
+			display: none;
+		}
 	}
 </style>
