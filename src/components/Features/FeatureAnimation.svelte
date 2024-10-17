@@ -2,7 +2,6 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { base } from '$app/paths';
 	import { inview } from 'svelte-inview';
-	import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
 	let isInView;
 	const options = {
@@ -34,7 +33,7 @@
 	}
 
 	onMount(async () => {
-		loadLottiePlayerComponent();
+		await loadLottiePlayerComponent();
 		isLoaded = true;
 	});
 
@@ -45,7 +44,7 @@
 
 {#if isLoaded}
 	<div use:inview={options} on:inview_change={handleChange}>
-		<LottiePlayer
+		<LottiePlayerComponent
 			src={`${base}/animations/${path}.json`}
 			autoplay={true}
 			loop={true}
