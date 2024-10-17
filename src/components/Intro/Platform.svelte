@@ -1,4 +1,5 @@
 <script>
+	import MainPlatformGhost from './MainPlatformGhost.svelte';
 	import LazyImg from '$common/LazyImg.svelte';
 	import platformImg from './img/main-platform.webp';
 	import btc from './img/btc.svg';
@@ -18,5 +19,7 @@
 		</div>
 	{/each}
 
-	<LazyImg src={platformImg} alt="XXBroker Platform" />
+	<LazyImg src={platformImg} alt="XXBroker Platform">
+		<MainPlatformGhost />
+	</LazyImg>
 </div>

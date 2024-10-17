@@ -1,19 +1,6 @@
 export default {
 	button: 'Get started for free',
-	header: {
-		menu: ['Leaderboard', 'How to start', 'Features', 'Awards'],
-		login: 'Log in',
-		get_started: 'Get started',
-		new: 'New',
-		mobile_menu_label: 'Menu'
-	},
-	intro: {
-		h1: 'Trading Platform.<br />Fast investing',
-		h1_caption: 'Trade 250+ assets in an advanced interface with extended functionality.',
-		button: 'Get started for free',
-		available_on_devices: 'Avaliable on any device',
-		available_on_devices_caption: 'Control your trades from web, desktop, and mobile'
-	},
+
 	leaderboard: {
 		h2: 'The most profitable traders',
 		table_head: ['User', 'Asset', 'Time', 'Date', 'Buy · Sell', 'Profit'],
@@ -23,7 +10,6 @@ export default {
 	},
 	how_to_start: {
 		h2: 'How to start',
-		button: 'Get started for free',
 		items: [
 			{ title: 'Register', caption: 'Get both Demo and Real account for free' },
 			{ title: 'Top up with ease', caption: 'Use your favorite payment options for deposits' },

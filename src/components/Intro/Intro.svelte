@@ -1,12 +1,27 @@
 <script>
 	import { onMount } from 'svelte';
+	import { inview } from 'svelte-inview';
+
+	import FloatingButton from '$common/FloatingButton.svelte';
 	import Platform from './Platform.svelte';
 	import Devices from './Devices.svelte';
 	import Button from '$common/Button.svelte';
-	import './scss/intro.scss';
-	export let content;
 
-	const { h1, h1_caption, button, available_on_devices, available_on_devices_caption } = content;
+	import './scss/intro.scss';
+	export let lang;
+
+	const translation = {
+		en: {
+			h1: 'Trading Platform.<br />Fast investing',
+			h1_caption: 'Trade 250+ assets in an advanced interface with extended functionality.',
+			available_on_devices: 'Avaliable on any device',
+			available_on_devices_caption: 'Control your trades from web, desktop, and mobile'
+		}
+	};
+
+	const content = translation[lang];
+
+	const { h1, h1_caption, available_on_devices, available_on_devices_caption } = content;
 
 	let isActive = false;
 
@@ -34,11 +49,17 @@
 
 		return () => observer.disconnect();
 	});
+
+	let isInView = true;
+	const options = {
+		threshold: 0.1
+	};
+	const handleChange = ({ detail }) => (isInView = detail.inView);
 </script>
 
 <div class="intro" id="intro" class:active={isActive}>
 	<section>
-		<div class="intro-text-content">
+		<div class="intro-text-content" use:inview={options} on:inview_change={handleChange}>
 			<h1>{@html h1}</h1>
 			<div class="h1-caption">
 				{h1_caption}
@@ -49,3 +70,5 @@
 		<Devices content={{ available_on_devices, available_on_devices_caption }} />
 	</section>
 </div>
+
+<FloatingButton visible={!isInView} />

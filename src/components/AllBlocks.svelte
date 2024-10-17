@@ -33,11 +33,9 @@
 </script>
 
 <div class="main">
-	<div style="background-image: url({base}/images/bgr/intro_bgr.svg);" class="intro-bgr">
-		{#if isTranslationLoaded}
-			<Header content={translation.header} />
-			<Intro content={translation.intro} />
-		{/if}
+	<div class="intro-bgr has-bgr" data-bgimage="{base}/images/bgr/intro_bgr.svg">
+		<Header content={translation.header} {lang} />
+		<Intro content={translation.intro} {lang} />
 	</div>
 	{#if isTranslationLoaded}
 		<Leaderboard content={translation.leaderboard} />
@@ -54,6 +52,7 @@
 		<Footer content={translation.footer} />
 	{/if}
 </div>
+
 <section class="footer-logo">
 	<Logo />
 </section>

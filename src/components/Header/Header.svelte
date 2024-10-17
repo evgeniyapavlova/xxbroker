@@ -8,7 +8,17 @@
 
 	import './scss/header.scss';
 
-	export let content;
+	export let lang;
+	const translation = {
+		en: {
+			menu: ['Leaderboard', 'How to start', 'Features', 'Awards'],
+			login: 'Log in',
+			get_started: 'Get started',
+			new: 'New',
+			mobile_menu_label: 'Menu'
+		}
+	};
+	const content = translation[lang];
 </script>
 
 <section class="header-wrap" id="header">
