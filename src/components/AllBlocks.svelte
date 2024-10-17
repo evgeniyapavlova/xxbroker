@@ -10,6 +10,7 @@
 	import Conditions from './Conditions/Conditions.svelte';
 	import Features from './Features/Features.svelte';
 	import Achievements from './Achievements/Achievements.svelte';
+	import Reviews from './Reviews/Reviews.svelte';
 
 	export let lang;
 
@@ -44,8 +45,10 @@
 	<People />
 
 	{#if isTranslationLoaded}
+		<Conditions content={translation.conditions} />
 		<Features content={translation.features} />
 		<Achievements content={translation.achievements} />
+		<Reviews content={translation.reviews} />
 	{/if}
 </div>
 
