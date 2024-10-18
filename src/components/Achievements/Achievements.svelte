@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 	import translation from '$lib/translations/achievements';
 
 	import AchievementItem from './AchievementItem.svelte';
@@ -7,6 +6,8 @@
 	import award_1 from './img/award_1.webp';
 	import award_2 from './img/award_2.webp';
 	import award_3 from './img/award_3.webp';
+
+	import './scss/achievements.scss';
 
 	export let lang;
 	const { h2, caption, items } = translation[lang];
@@ -28,19 +29,6 @@
 			image: award_3
 		}
 	];
-
-	let isStyleLoaded = false;
-
-	async function loadStyle() {
-		if (!isStyleLoaded) {
-			await import('./scss/achievements.scss');
-			isStyleLoaded = true;
-		}
-	}
-
-	onMount(async () => {
-		loadStyle();
-	});
 </script>
 
 <div class="title">

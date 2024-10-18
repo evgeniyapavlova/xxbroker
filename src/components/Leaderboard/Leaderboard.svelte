@@ -4,6 +4,9 @@
 
 	import LiveTag from './LiveTag.svelte';
 
+	import './scss/leaderboard.scss';
+	import './scss/pedestal.scss';
+
 	export let lang;
 
 	const content = translation[lang];
@@ -35,20 +38,6 @@
 		observer.observe(section);
 
 		return () => observer.disconnect();
-	});
-
-	let isStyleLoaded = false;
-
-	async function loadStyle() {
-		if (!isStyleLoaded) {
-			await import('./scss/leaderboard.scss');
-			await import('./scss/pedestal.scss');
-			isStyleLoaded = true;
-		}
-	}
-
-	onMount(async () => {
-		loadStyle();
 	});
 </script>
 

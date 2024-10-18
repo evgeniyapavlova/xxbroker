@@ -7,18 +7,7 @@
 	import CellWithImg from './CellWithImg.svelte';
 	import ArrowUp from './ArrowUp.svelte';
 
-	let isStyleLoaded = false;
-
-	async function loadStyle() {
-		if (!isStyleLoaded) {
-			await import('./scss/table.scss');
-			isStyleLoaded = true;
-		}
-	}
-
-	onMount(async () => {
-		loadStyle();
-	});
+	import './scss/table.scss';
 
 	export let content, buy, sell;
 
