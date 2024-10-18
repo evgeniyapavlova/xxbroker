@@ -5,7 +5,9 @@
 	import Reddit from '../img/reddit.svg';
 
 	const content = {
-		en: 'Day change'
+		en: 'Day change',
+		es: 'Cambio diario',
+		pt: 'Alteração diária'
 	};
 
 	const items = [

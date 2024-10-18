@@ -3,7 +3,9 @@
 	import { linkRegister } from '$lib/stores/reg_link';
 
 	const content = {
-		en: 'Get started for free'
+		en: 'Get started for free',
+		es: 'Comienza gratis',
+		pt: 'Comece gratuitamente'
 	};
 </script>
 

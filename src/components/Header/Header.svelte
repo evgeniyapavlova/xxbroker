@@ -16,6 +16,20 @@
 			get_started: 'Get started',
 			new: 'New',
 			mobile_menu_label: 'Menu'
+		},
+		es: {
+			menu: ['Clasificación', 'Cómo empezar', 'Funciones', 'Premios'],
+			login: 'Acceder',
+			get_started: 'Comienza',
+			new: 'Nuevo',
+			mobile_menu_label: 'Menu'
+		},
+		pt: {
+			menu: ['Tabela de classificação', 'Como começar', 'Recursos', 'Prêmios'],
+			login: 'Entrar',
+			get_started: 'Iniciar',
+			new: 'Novidade',
+			mobile_menu_label: 'Menu'
 		}
 	};
 	const content = translation[lang];

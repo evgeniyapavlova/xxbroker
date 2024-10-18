@@ -19,6 +19,22 @@
 			items: ['Practice', 'Real'],
 			switch: 'To switch to the Real account, please sign up',
 			sign_up: 'Sign up'
+		},
+		es: {
+			title: 'Cuenta Demo Recargable',
+			caption:
+				'Prueba tus estrategias en la cuenta de práctica de 10.000 $. Sin plazos ni presiones.',
+			items: ['Práctica', 'Real'],
+			switch: 'Para cambiar a la cuenta Real, por favor regístrate',
+			sign_up: 'Registro'
+		},
+		pt: {
+			title: 'Conta de demonstração recarregável',
+			caption:
+				'Teste suas estratégias na conta de prática de $ 10 mil. Sem expiração, sem pressão.',
+			items: ['Prática', 'Real'],
+			switch: 'Para mudar para a conta Real, registre-se',
+			sign_up: 'Registre-se'
 		}
 	};
 

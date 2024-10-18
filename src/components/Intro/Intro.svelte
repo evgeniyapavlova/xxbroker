@@ -16,6 +16,20 @@
 			h1_caption: 'Trade 250+ assets in an advanced interface with extended functionality.',
 			available_on_devices: 'Avaliable on any device',
 			available_on_devices_caption: 'Control your trades from web, desktop, and mobile'
+		},
+		es: {
+			h1: 'Plataforma de Trading.<br />Inversión rápida',
+			h1_caption: 'Opera con +250 activos en una avanzada interfaz con funcionalidades extendidas.',
+			available_on_devices: 'Disponible en cualquier dispositivo',
+			available_on_devices_caption: 'Controla tus operaciones desde web, escritorio y móvil'
+		},
+		pt: {
+			h1: 'Plataforma de Negociação.<br />Investimento rápido',
+			h1_caption:
+				'Negocie mais de 250 ativos em uma interface avançada com funcionalidade estendida.',
+			available_on_devices: 'Disponível em qualquer dispositivo',
+			available_on_devices_caption:
+				'Controle suas negociações pela web, desktop e dispositivos móveis'
 		}
 	};
 

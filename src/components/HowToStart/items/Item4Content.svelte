@@ -1,5 +1,29 @@
 <script>
+	import { lang } from '$lib/stores/lang';
 	import mastercard from '../img/mastercard-2.svg';
+
+	const translation = {
+		en: {
+			card_holder: 'Card holder',
+			valid: 'Valid',
+			balance: 'Balance',
+			last_month: 'for last month'
+		},
+		es: {
+			card_holder: 'titular de la tarjeta',
+			valid: 'Validez',
+			balance: 'Saldo',
+			last_month: 'para el último mes'
+		},
+		pt: {
+			card_holder: 'titular do cartão',
+			valid: 'Validade',
+			balance: 'Saldo',
+			last_month: 'do mês passado'
+		}
+	};
+
+	const content = translation[$lang];
 </script>
 
 <div class="start-item-content">
@@ -8,22 +32,22 @@
 		<div class="card-number">1241 9884 1182 1000</div>
 		<div class="card-data">
 			<div class="card-data-block">
-				<span>Card holder</span>
+				<span>{content.card_holder}</span>
 				<p>Tarem Peachko</p>
 			</div>
 			<div class="card-data-block">
-				<span>Valid</span>
+				<span>{content.valid}</span>
 				<p>03/29</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="start-balance">
-		<div class="balance-caption">Balance</div>
+		<div class="balance-caption">{content.balance}</div>
 		<div class="balance-data">$3,981.22</div>
 		<div class="balance-caption">
 			<span>+$1,642</span>
-			for last month
+			{content.last_month}
 		</div>
 	</div>
 </div>
