@@ -59,6 +59,15 @@ h1 {
 }
 .platform-image-wrap {
 	position: relative;
+	.platform {
+		position: absolute;
+		inset: 0;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		@media screen and (max-width: var.$tab-m) {
+			background-size: 960px 534px;
+		}
+	}
 
 	.platform-img {
 		width: 100%;
@@ -67,10 +76,17 @@ h1 {
 		img {
 			position: absolute;
 		}
+
+		@media screen and (max-width: var.$tab-m) {
+			width: 960px;
+			height: 534px;
+			padding-bottom: 0;
+		}
 	}
 	@media screen and (max-width: var.$tab-m) {
 		width: 960px;
 		max-width: unset;
+		height: 534px;
 	}
 	.asset {
 		position: absolute;

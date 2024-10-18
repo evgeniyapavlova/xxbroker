@@ -7,29 +7,25 @@
 
 	import './scss/people.scss';
 
-	import { inview } from 'svelte-inview';
-
-	let isInView;
-	const options = {
-		rootMargin: '500px',
-		unobserveOnEnter: true
-	};
-
-	const handleChange = ({ detail }) => (isInView = detail.inView);
+	const images = [img1, [img2, img3], img4, img5];
 </script>
 
 <div class="people">
-	<div class="content" use:inview={options} on:inview_change={handleChange}>
-		{#if isInView}
-			<img src={img1} alt="Girl with iPad" class="people-img-1" loading="lazy" />
-			<div>
-				<img src={img2} alt="Man with laptop" class="people-img-2" loading="lazy" />
-				<img src={img3} alt="Man with laptop" class="people-img-3" loading="lazy" />
-			</div>
-			<img src={img4} alt="Man with mobile phone" class="people-img-4" loading="lazy" />
-			<img src={img5} alt="Girl with laptop" class="people-img-5" loading="lazy" />
-		{:else}
-			<div style="height: 600px;"></div>
-		{/if}
+	<div class="content">
+		{#each images as i, index}
+			{#if Array.isArray(i)}
+				<div class="flex">
+					{#each i as image, index2}
+						<div class="img-wrap img-wrap-{index + 1}-{index2 + 1}">
+							<div class="img-bgr has-bgr" data-bgimage={image}></div>
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<div class="img-wrap img-wrap-{index + 1}">
+					<div class="img-bgr has-bgr" data-bgimage={i}></div>
+				</div>
+			{/if}
+		{/each}
 	</div>
 </div>

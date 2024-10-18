@@ -1,7 +1,12 @@
 @use '$lib/styles/_constants' as var;
 
+@mixin wCalc($w) {
+	width: calc($w + 18px);
+}
+
 .people {
-	max-width: 100vw;
+	width: 100vw;
+	min-height: 255px;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
@@ -10,13 +15,19 @@
 	.content {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
 		gap: 24px;
 		min-width: 825px;
-		margin-left: -5%;
-		margin-right: -3%;
-		width: 108%;
-
+		max-width: 1600px;
+		margin-left: -7%;
+		margin-right: -4%;
+		width: 111%;
+		@media screen and (min-width: 1500px) {
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+			max-width: 1600px;
+		}
 		@media screen and (max-width: var.$desk-l) {
 			gap: 16px;
 		}
@@ -26,32 +37,51 @@
 		}
 	}
 
-	img {
-		display: block;
-		border-radius: 32px;
+	.img-wrap {
+		&-1 {
+			@include wCalc(21%);
+			.img-bgr {
+				padding-bottom: 119%;
+			}
+		}
+		&-3 {
+			@include wCalc(31%);
+			.img-bgr {
+				padding-bottom: 82%;
+			}
+		}
+		&-4 {
+			@include wCalc(21%);
+			.img-bgr {
+				padding-bottom: 140%;
+			}
+		}
 	}
 
-	.content > div {
+	.img-bgr {
+		border-radius: 32px;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+
+	.flex {
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
-		width: 22%;
+		@include wCalc(21%);
 		@media screen and (max-width: var.$desk-l) {
 			gap: 16px;
 		}
 		@media screen and (max-width: var.$mob-l) {
 			gap: 12px;
 		}
-	}
-	&-img {
-		&-1 {
-			width: 22%;
-		}
-		&-4 {
-			width: 32%;
-		}
-		&-5 {
-			width: 19%;
+		.img-wrap {
+			width: 100%;
+			.img-bgr {
+				padding-bottom: 68%;
+			}
 		}
 	}
 }
