@@ -97,6 +97,7 @@
 		opacity: 0;
 		animation: ripple 10s infinite;
 		animation-delay: calc(var(--i) * 2.5s);
+		will-change: opacity, width, height;
 	}
 
 	.circle:nth-child(1) {
