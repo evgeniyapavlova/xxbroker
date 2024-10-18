@@ -51,12 +51,34 @@
 	onMount(async () => {
 		loadLeaderboardComponent();
 		loadHowToStartComponent();
-		loadPeopleComponent();
 		loadConditionsComponent();
 		loadFeaturesComponent();
 		loadAchievementsComponent();
-		loadFooterComponent();
-		loadReviewsComponent();
+	});
+
+	let section;
+
+	onMount(() => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(
+				(entry) => {
+					if (entry.isIntersecting) {
+						loadPeopleComponent();
+						loadFooterComponent();
+						loadReviewsComponent();
+						observer.unobserve(entry.target);
+					}
+				},
+				{
+					root: null,
+					rootMargin: '800px 0px 0px 0px'
+				}
+			);
+		});
+
+		observer.observe(section);
+
+		return () => observer.disconnect();
 	});
 </script>
 
@@ -71,15 +93,17 @@
 		{/if}
 	</section>
 
-	<section id="start">
+	<section id="start" bind:this={section}>
 		{#if HowToStartComponent}
 			<svelte:component this={HowToStartComponent} {lang} />
 		{/if}
 	</section>
 
-	{#if PeopleComponent}
-		<svelte:component this={PeopleComponent} />
-	{/if}
+	<div class="people">
+		{#if PeopleComponent}
+			<svelte:component this={PeopleComponent} />
+		{/if}
+	</div>
 	{#if ConditionsComponent}
 		<svelte:component this={ConditionsComponent} {lang} />
 	{/if}

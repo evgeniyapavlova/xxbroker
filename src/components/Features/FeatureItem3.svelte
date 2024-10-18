@@ -1,5 +1,6 @@
 <script>
 	import { lang } from '$lib/stores/lang';
+	import { isLottieLoaded } from '$lib/stores/isLottieLoaded';
 	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import { writable } from 'svelte/store';
@@ -20,7 +21,7 @@
 				'Multi-gráficos, + 100 indicadores, widgets y herramientas gráficas para un análisis de precios supremo.',
 			items: ['Clasificatoria', 'Chats Y Soporte']
 		},
-		pr: {
+		pt: {
 			title: 'Comunidade de investidores',
 			caption:
 				'Gráficos múltiplos, mais de 100 indicadores, widgets e ferramentas gráficas para uma análise de preços excepcional.',
@@ -89,7 +90,7 @@
 	</div>
 
 	<div class="feature-animation">
-		{#if FeatureAnimationComponent}
+		{#if FeatureAnimationComponent && $isLottieLoaded}
 			<svelte:component
 				this={FeatureAnimationComponent}
 				id="feature-3-animation"

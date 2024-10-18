@@ -22,6 +22,54 @@ export default {
 				items: ['Order Execution Policy', 'Demo Accounts', 'Margin Trading']
 			}
 		]
+	},
+	es: {
+		address:
+			'Sun Wave LLC.<br />Address: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Nevis<br />Company business number: L 22402<br />Las transacciones de pago son gestionadas por: S.W. SUN WAVE CY LTD<br />Address: 6 Koutsoventi street, 4101 Agios Athanasios Limassol, Cyprus<br />Company business number: HE 450991',
+		items: [
+			{ title: 'Privacidad y Datos', items: ['Política de Privacidad', 'Cookies'] },
+			{
+				title: 'Transacciones Financieras',
+				items: ['Política de Pagos', 'Política de Retiradas', 'Comisiones Generales']
+			},
+			{
+				title: 'Legal y Regulación',
+				items: [
+					'Términos y Condiciones',
+					'AML (Anti Blanqueo de Dinero)',
+					'Alerta de Riesgo',
+					'Términos para sudáfrica'
+				]
+			},
+			{
+				title: 'Trading y Cuenta',
+				items: ['Orden de Política de Ejecución', 'Cuentas Demo', 'Trading con Margen']
+			}
+		]
+	},
+	pt: {
+		address:
+			'Sun Wave LLC.<br />Endereço: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Neves.<br />Número comercial da empresa: L 22402. <br />As transações de pagamento são gerenciadas por: S.W. SUN WAVE CY LTD. <br />Endereço: 6 Koutsoventi street, 4101 Agios Athanasios Limassol, Chipre. <br />Número comercial da empresa: HE 450991',
+		items: [
+			{ title: 'Privacidade e Dados', items: ['Política de Privacidade', 'Cookies'] },
+			{
+				title: 'Transações financeiras',
+				items: ['Política de Pagamentos', 'Política de Retiradas', 'Taxas Gerais']
+			},
+			{
+				title: 'Legal e Regulatório',
+				items: [
+					'Termos e Condições',
+					'AML (Combate à Lavagem de Dinheiro)',
+					'Divulgação de Risco',
+					'Termos para África do Sul'
+				]
+			},
+			{
+				title: 'Negociação e Conta',
+				items: ['Política de Execução de Ordens', 'Contas de Demonstração', 'Negociação com margem']
+			}
+		]
 	}
 };
 

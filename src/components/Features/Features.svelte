@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { isLottieLoaded } from '$lib/stores/isLottieLoaded';
+
 	import translation from '$lib/translations/features';
 	import FeaturesContent from './FeaturesContent.svelte';
 	import { loadLottieLib } from '$lib/utils/loadLottieLib';
@@ -41,8 +41,6 @@
 			<h2>{content.h2}</h2>
 			<div class="caption">{content.caption}</div>
 		</div>
-		{#if $isLottieLoaded}
-			<FeaturesContent />
-		{/if}
+		<FeaturesContent />
 	</div>
 </div>
