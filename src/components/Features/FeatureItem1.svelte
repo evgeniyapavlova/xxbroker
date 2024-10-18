@@ -1,5 +1,6 @@
 <script>
 	import { lang } from '$lib/stores/lang';
+	import { isLottieLoaded } from '$lib/stores/isLottieLoaded';
 	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import { writable } from 'svelte/store';
@@ -93,7 +94,7 @@
 		<NextFeatureButton href="#feature-2" />
 	</div>
 	<div class="feature-animation">
-		{#if FeatureAnimationComponent}
+		{#if FeatureAnimationComponent && $isLottieLoaded}
 			<svelte:component
 				this={FeatureAnimationComponent}
 				id="feature-1-animation"

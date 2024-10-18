@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	import './dropdown.scss';
 
@@ -42,7 +41,7 @@
 	</button>
 
 	{#if isExpanded}
-		<menu id={menuId} class="dropdown-menu" transition:fade>
+		<menu id={menuId} class="dropdown-menu">
 			<div class="menu-inner">
 				<slot name="content" />
 			</div>
