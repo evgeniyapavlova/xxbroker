@@ -28,6 +28,7 @@
 		@media screen and (max-width: var.$desk-s) {
 			padding: 0;
 			text-align: center;
+			align-items: center;
 		}
 	}
 	&-title {
@@ -103,7 +104,8 @@
 			color: var(--moss-600);
 			font-size: 14px;
 			line-height: 18px;
-			word-break: break-all;
+			// word-break: break-all;
+			hyphens: manual;
 			transition:
 				color 0.1s ease-in-out,
 				font-weight 0.1s ease-in-out;

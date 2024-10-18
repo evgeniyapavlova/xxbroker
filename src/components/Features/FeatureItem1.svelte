@@ -22,13 +22,23 @@
 			title: 'Herramientas de análisis',
 			caption:
 				'Multi-gráficos, + 100 indicadores, widgets y herramientas gráficas para un análisis de precios supremo.',
-			items: ['Tipo de Gráfico', 'Periodo de tiempo', 'Herramientas gráficas', 'Indicadores']
+			items: [
+				'Tipo de<br />Gráfico',
+				'Periodo<br />de tiempo',
+				'Herra&shy;mientas<br />gráficas',
+				'Indica&shy;dores'
+			]
 		},
 		pt: {
 			title: 'Ferramentas de análise',
 			caption:
 				'Gráficos múltiplos, mais de 100 indicadores, widgets e ferramentas gráficas para uma análise de preços excepcional.',
-			items: ['Tipos de gráfico', 'Período', 'Ferramentas gráficas', 'Indicadores']
+			items: [
+				'Tipos de<br />gráfico',
+				'Período',
+				'Ferra&shy;mentas<br />gráficas',
+				'Indica&shy;dores'
+			]
 		}
 	};
 
