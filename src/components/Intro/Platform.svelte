@@ -24,7 +24,7 @@
 <div class="platform-image-wrap" use:inview={options} on:inview_change={handleChange}>
 	{#each images as image, index}
 		<div class="asset asset-{index}">
-			<img src={image} alt="BTC tab" class="asset-img" />
+			<img src={image} alt="BTC tab" class="asset-img" loading="lazy" />
 		</div>
 	{/each}
 

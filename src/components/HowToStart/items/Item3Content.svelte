@@ -1,8 +1,8 @@
 <script>
 	import { lang } from '$lib/stores/lang';
-	import Bitcoin from '../img/Bitcoin.webp';
-	import Ripple from '../img/Ripple.webp';
-	import Reddit from '../img/Reddit.webp';
+	import Bitcoin from '../img/bitcoin.svg';
+	import Ripple from '../img/ripple.svg';
+	import Reddit from '../img/reddit.svg';
 
 	const content = {
 		en: 'Day change'
@@ -18,7 +18,7 @@
 <div class="start-item-content">
 	{#each items as item}
 		<div class="item">
-			<img src={item.img} alt={item.name} />
+			<img src={item.img} alt={item.name} loading="lazy" />
 			<div class="item-text">
 				<div class="item-name">{item.name}</div>
 				<div class="item-caption">

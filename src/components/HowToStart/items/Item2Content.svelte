@@ -21,7 +21,7 @@
 <div class="start-item-content">
 	{#each items as item}
 		<div class="item">
-			<img src={item.img} alt={item.name} />
+			<img src={item.img} alt={item.name} loading="lazy" />
 			<div class="item-name">{item.name}</div>
 		</div>
 	{/each}
