@@ -101,11 +101,3 @@
 		<svelte:component this={FooterComponent} {lang} />
 	{/if}
 </div>
-
-<style>
-	.intro-bgr {
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-size: cover;
-	}
-</style>

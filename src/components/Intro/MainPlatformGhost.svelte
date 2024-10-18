@@ -1,4 +1,5 @@
 <svg
+	class="ghost-platform"
 	width="1170"
 	height="651"
 	viewBox="0 0 1170 651"
@@ -164,12 +165,3 @@
 		</clipPath>
 	</defs>
 </svg>
-
-<style>
-	@media screen and (max-width: 720px) {
-		svg {
-			width: 960px;
-			max-width: unset;
-		}
-	}
-</style>
