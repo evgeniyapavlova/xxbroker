@@ -78,7 +78,7 @@
 	</section>
 
 	{#if PeopleComponent}
-		<svelte:component this={PeopleComponent} {lang} />
+		<svelte:component this={PeopleComponent} />
 	{/if}
 	{#if ConditionsComponent}
 		<svelte:component this={ConditionsComponent} {lang} />
