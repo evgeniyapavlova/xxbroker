@@ -6,6 +6,7 @@
 	import { linkLogin, linkRegister, linkTraderoom } from '$lib/stores/reg_link';
 
 	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
+	import LottieScript from '$common/LottieScript.svelte';
 
 	import '$lib/styles/_constants.scss';
 	import '$lib/styles/fonts.css';
@@ -27,6 +28,7 @@
 <div class="app">
 	<slot />
 </div>
+<LottieScript />
 
 <style>
 	.app {
