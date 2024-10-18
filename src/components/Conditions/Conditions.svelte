@@ -6,9 +6,9 @@
 
 	import './scss/conditions.scss';
 
-	import img1 from './img/img1.webp';
-	import img2 from './img/img2.webp';
-	import img3 from './img/img3.webp';
+	import img1 from './img/img1.webp?enhanced';
+	import img2 from './img/img2.webp?enhanced';
+	import img3 from './img/img3.webp?enhanced';
 
 	export let lang;
 
@@ -36,7 +36,7 @@
 			{#each items as item, index}
 				<div class="conditions-item">
 					{#if isInView}
-						<img src={itemsData[index].img} alt="Condition {index + 1}" loading="lazy" />
+						<enhanced:img src={itemsData[index].img} alt="Condition {index + 1}" />
 					{/if}
 					<div class="conditions-item-title">
 						{itemsData[index].title}
