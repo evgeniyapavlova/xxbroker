@@ -13,19 +13,19 @@
 			title: 'Investors community',
 			caption:
 				'Multi-charting, 100+ indicators, widgets, and graphical tools for supreme price analysis.',
-			items: ['Leader-<br />board', 'Chats &<br />Support']
+			items: ['Leader&shy;board', 'Chats &<br />Support']
 		},
 		es: {
 			title: 'Comunidad de inversores',
 			caption:
 				'Multi-gráficos, + 100 indicadores, widgets y herramientas gráficas para un análisis de precios supremo.',
-			items: ['Clasificatoria', 'Chats Y Soporte']
+			items: ['Clasifi&shy;catoria', 'Chats Y<br />Soporte']
 		},
 		pt: {
 			title: 'Comunidade de investidores',
 			caption:
 				'Gráficos múltiplos, mais de 100 indicadores, widgets e ferramentas gráficas para uma análise de preços excepcional.',
-			items: ['Tabela de classificação', 'Chats e Suporte']
+			items: ['Tabela de<br />classi&shy;ficação', 'Chats e<br />Suporte']
 		}
 	};
 
