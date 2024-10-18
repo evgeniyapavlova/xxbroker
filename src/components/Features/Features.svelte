@@ -5,6 +5,9 @@
 	import FeaturesContent from './FeaturesContent.svelte';
 	import { loadLottieLib } from '$lib/utils/loadLottieLib';
 
+	import './scss/features.scss';
+	import './scss/feature-item.scss';
+
 	export let lang;
 	const content = translation[lang];
 
@@ -29,20 +32,6 @@
 		observer.observe(section);
 
 		return () => observer.disconnect();
-	});
-
-	let isStyleLoaded = false;
-
-	async function loadStyle() {
-		if (!isStyleLoaded) {
-			await import('./scss/features.scss');
-			await import('./scss/feature-item.scss');
-			isStyleLoaded = true;
-		}
-	}
-
-	onMount(async () => {
-		loadStyle();
 	});
 </script>
 

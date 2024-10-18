@@ -9,6 +9,8 @@
 	import img2 from './img/img2.webp';
 	import img3 from './img/img3.webp';
 
+	import './scss/conditions.scss';
+
 	export let lang;
 
 	const { h2, items, h2_2 } = translation[lang];
@@ -26,19 +28,6 @@
 	};
 
 	const handleChange = ({ detail }) => (isInView = detail.inView);
-
-	let isStyleLoaded = false;
-
-	async function loadStyle() {
-		if (!isStyleLoaded) {
-			await import('./scss/conditions.scss');
-			isStyleLoaded = true;
-		}
-	}
-
-	onMount(async () => {
-		loadStyle();
-	});
 </script>
 
 <section class="conditions" id="conditions" use:inview={options} on:inview_change={handleChange}>
