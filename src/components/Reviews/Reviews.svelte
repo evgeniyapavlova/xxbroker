@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import translation from '$lib/translations/reviews';
 	import { data } from './data';
@@ -7,8 +8,6 @@
 
 	import heart from './img/heart.svg';
 	import photos from './img';
-
-	import './scss/reviews.scss';
 
 	export let lang;
 	const { h2, caption, items } = translation[lang];
@@ -19,6 +18,19 @@
 		unobserveOnEnter: true
 	};
 	const handleChange = ({ detail }) => (isInView = detail.inView);
+
+	let isStyleLoaded = false;
+
+	async function loadStyle() {
+		if (!isStyleLoaded) {
+			await import('./scss/reviews.scss');
+			isStyleLoaded = true;
+		}
+	}
+
+	onMount(async () => {
+		loadStyle();
+	});
 </script>
 
 <section class="reviews" id="reviews">
