@@ -3,7 +3,7 @@
 </script>
 
 <div class="cell-with-image">
-	<img {src} alt="" />
+	<img {src} width="40px" height="40px" alt="" />
 	<div class="cell-text">
 		<div class="cell-title">
 			<slot name="title" />
@@ -20,10 +20,6 @@
 		gap: 12px;
 		align-items: center;
 		justify-content: flex-start;
-	}
-	img {
-		width: 40px;
-		height: 40px;
 	}
 	.cell-title {
 		font-weight: 500;

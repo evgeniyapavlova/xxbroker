@@ -136,7 +136,12 @@
 		<div class="pedestal-item-wrap">
 			<img src="{base}/images/leaderboard/crown.png" alt="" class="pedestal-crown" />
 			<div class="pedestal-lider">
-				<img src="{base}/images/leaderboard/avatars/{leaders[index].id}.webp" alt="" />
+				<img
+					src="{base}/images/leaderboard/avatars/{leaders[index].id}.webp"
+					alt=""
+					width="52px"
+					height="52px"
+				/>
 				<div>
 					<div class="pedestal-name">
 						{leaders[index].name}
