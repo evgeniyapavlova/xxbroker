@@ -3,7 +3,7 @@
 </script>
 
 <div class="cell-with-image">
-	<img {src} width="40px" height="40px" alt="" />
+	<img {src} width="40px" height="40px" alt="" loading="lazy" />
 	<div class="cell-text">
 		<div class="cell-title">
 			<slot name="title" />
