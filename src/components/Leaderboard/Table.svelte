@@ -134,13 +134,14 @@
 <div class="pedestal" use:inview={options} on:inview_change={handleChange}>
 	{#each [1, 2, 3] as item, index}
 		<div class="pedestal-item-wrap">
-			<img src="{base}/images/leaderboard/crown.png" alt="" class="pedestal-crown" />
+			<img src="{base}/images/leaderboard/crown.png" alt="" class="pedestal-crown" loading="lazy" />
 			<div class="pedestal-lider">
 				<img
 					src="{base}/images/leaderboard/avatars/{leaders[index].id}.webp"
 					alt=""
 					width="52px"
 					height="52px"
+					loading="lazy"
 				/>
 				<div>
 					<div class="pedestal-name">

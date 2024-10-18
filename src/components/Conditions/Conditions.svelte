@@ -36,7 +36,7 @@
 			{#each items as item, index}
 				<div class="conditions-item">
 					{#if isInView}
-						<enhanced:img src={itemsData[index].img} alt="Condition {index + 1}" />
+						<enhanced:img src={itemsData[index].img} alt="Condition {index + 1}" loading="lazy" />
 					{/if}
 					<div class="conditions-item-title">
 						{itemsData[index].title}
