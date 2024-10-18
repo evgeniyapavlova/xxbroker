@@ -1,14 +1,13 @@
 <script>
 	import { inview } from 'svelte-inview';
+	import { onMount } from 'svelte';
 	import translation from '$lib/translations/conditions';
 
 	import MethodsList from './MethodsList.svelte';
 
-	import './scss/conditions.scss';
-
-	import img1 from './img/img1.webp?enhanced';
-	import img2 from './img/img2.webp?enhanced';
-	import img3 from './img/img3.webp?enhanced';
+	import img1 from './img/img1.webp';
+	import img2 from './img/img2.webp';
+	import img3 from './img/img3.webp';
 
 	export let lang;
 
@@ -27,6 +26,19 @@
 	};
 
 	const handleChange = ({ detail }) => (isInView = detail.inView);
+
+	let isStyleLoaded = false;
+
+	async function loadStyle() {
+		if (!isStyleLoaded) {
+			await import('./scss/conditions.scss');
+			isStyleLoaded = true;
+		}
+	}
+
+	onMount(async () => {
+		loadStyle();
+	});
 </script>
 
 <section class="conditions" id="conditions" use:inview={options} on:inview_change={handleChange}>
@@ -36,7 +48,7 @@
 			{#each items as item, index}
 				<div class="conditions-item">
 					{#if isInView}
-						<enhanced:img src={itemsData[index].img} alt="Condition {index + 1}" loading="lazy" />
+						<img src={itemsData[index].img} alt="Condition {index + 1}" loading="lazy" />
 					{/if}
 					<div class="conditions-item-title">
 						{itemsData[index].title}

@@ -6,7 +6,19 @@
 	import { tableData, assets } from './tableData';
 	import CellWithImg from './CellWithImg.svelte';
 	import ArrowUp from './ArrowUp.svelte';
-	import './scss/table.scss';
+
+	let isStyleLoaded = false;
+
+	async function loadStyle() {
+		if (!isStyleLoaded) {
+			await import('./scss/table.scss');
+			isStyleLoaded = true;
+		}
+	}
+
+	onMount(async () => {
+		loadStyle();
+	});
 
 	export let content, buy, sell;
 

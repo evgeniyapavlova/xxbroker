@@ -1,8 +1,8 @@
 <script>
+	import { onMount } from 'svelte';
 	import translation from '$lib/translations/how_to_start';
 
 	import HowToStartItem from './HowToStartItem.svelte';
-	import './scss/how-to-start.scss';
 
 	import itemsContent from './items';
 
@@ -10,6 +10,19 @@
 
 	const content = translation[lang];
 	const { h2, items } = content;
+
+	let isStyleLoaded = false;
+
+	async function loadStyle() {
+		if (!isStyleLoaded) {
+			await import('./scss/how-to-start.scss');
+			isStyleLoaded = true;
+		}
+	}
+
+	onMount(async () => {
+		loadStyle();
+	});
 </script>
 
 <h2>
