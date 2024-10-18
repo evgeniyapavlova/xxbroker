@@ -2,7 +2,6 @@
 	import { inview } from 'svelte-inview';
 	import { base } from '$app/paths';
 	import MainPlatformGhost from './MainPlatformGhost.svelte';
-	import LazyImg from '$common/LazyImg.svelte';
 	import btc from './img/btc.svg';
 	import eth from './img/eth.svg';
 	import reddit from './img/reddit.svg';
@@ -31,7 +30,7 @@
 	<div class="platform-img">
 		<MainPlatformGhost />
 		{#if isInView}
-			<img src="{base}/images/main-platform.webp" alt="XXBroker Platform" />
+			<div class="platform has-bgr" data-bgimage="{base}/images/main-platform.webp"></div>
 		{/if}
 	</div>
 </div>
