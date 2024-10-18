@@ -1,7 +1,7 @@
 <script>
 	import { lang } from '$lib/stores/lang';
 
-	const content = { en: 'Next feature' };
+	const content = { en: 'Next feature', es: 'Próxima función', pt: 'Próximo recurso' };
 
 	export let href;
 </script>

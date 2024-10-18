@@ -7,7 +7,9 @@
 	import others from '../img/others.svg';
 
 	const content = {
-		en: '17+ more'
+		en: '17+ more',
+		es: '+17 más',
+		pt: '+ 17'
 	};
 
 	const items = [
