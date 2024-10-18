@@ -45,7 +45,7 @@ export default {
 					date: '14:15 · May 28, 2023'
 				},
 				{
-					text: 'Simple and beautiful platform. Everything you need, nothing extra. The mobile version is super 🔥',
+					text: 'Una plataforma sencilla y atractiva. Todo lo que necesitas, nada extra. La versión móvil es super 🔥',
 					date: '16:32 · Nov 9, 2022'
 				}
 			],
@@ -81,7 +81,7 @@ export default {
 					date: '14:15· 28 de maio de 2023'
 				},
 				{
-					text: 'Simple and beautiful platform. Everything you need, nothing extra. The mobile version is super 🔥',
+					text: 'Plataforma simples e bonita. Tudo aquilo de que você precisa é nada mais. A versão para dispositivos móveis é incrível 🔥',
 					date: '16:32 · 9 de novembro de 2022'
 				}
 			],
