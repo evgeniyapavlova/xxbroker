@@ -1,5 +1,6 @@
 <script>
-	import { inview } from 'svelte-inview';
+	import { onMount } from 'svelte';
+	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
 	import { base } from '$app/paths';
 	import MainPlatformGhost from './MainPlatformGhost.svelte';
 	import btc from './img/btc.svg';
@@ -11,16 +12,10 @@
 
 	const images = [menu, btc, reddit, eth, plus, vip];
 
-	let isInView;
-	const options = {
-		rootMargin: '500px',
-		unobserveOnEnter: true
-	};
-
-	const handleChange = ({ detail }) => (isInView = detail.inView);
+	onMount(lazyLoadBackground);
 </script>
 
-<div class="platform-image-wrap" use:inview={options} on:inview_change={handleChange}>
+<div class="platform-image-wrap">
 	{#each images as image, index}
 		<div class="asset asset-{index}">
 			<img src={image} alt="BTC tab" class="asset-img" loading="lazy" />
@@ -29,8 +24,11 @@
 
 	<div class="platform-img">
 		<MainPlatformGhost />
-		{#if isInView}
-			<div class="platform has-bgr" data-bgimage="{base}/images/main-platform.webp"></div>
-		{/if}
+		<div
+			class="platform has-bgr"
+			data-bgimage="{base}/images/main-platform.webp"
+			data-bgimage-mobile-retina="{base}/images/main-platform-mobile@2x.webp"
+			data-bgimage-mobile="{base}/images/main-platform-mobile.webp"
+		></div>
 	</div>
 </div>

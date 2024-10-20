@@ -71,22 +71,28 @@ h1 {
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		@media screen and (max-width: var.$tab-m) {
-			background-size: 960px 534px;
+			background-size: 692px 535px;
 		}
 	}
 
 	.platform-img {
 		width: 100%;
 		padding-bottom: 56%;
-		svg,
-		img {
+		svg {
+			width: 100%;
 			position: absolute;
+			max-width: 100%;
 		}
 
 		@media screen and (max-width: var.$tab-m) {
 			width: 960px;
 			height: 534px;
 			padding-bottom: 0;
+
+			svg {
+				width: 960px;
+				height: 534px;
+			}
 		}
 	}
 	@media screen and (max-width: var.$tab-m) {
@@ -98,6 +104,9 @@ h1 {
 		position: absolute;
 		width: 10.9%;
 		z-index: 1;
+		@media screen and (max-width: var.$tab-m) {
+			display: none;
+		}
 
 		img {
 			width: 100%;

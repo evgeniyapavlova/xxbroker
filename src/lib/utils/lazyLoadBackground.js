@@ -1,8 +1,27 @@
 export const lazyLoadBackground = () => {
+	const isMobile = window.matchMedia('(max-width: 720px)').matches;
+	const isRetina = window.devicePixelRatio > 1;
+
 	const setBackgroundImage = (element) => {
-		const bgImage = element.getAttribute('data-bgimage');
-		if (bgImage) {
+		const { dataset } = element;
+
+		const bgImage = dataset?.bgimage;
+		const bgImageMobile = dataset?.bgimageMobile;
+		const bgImageMobileRetina = dataset?.bgimageMobileRetina;
+
+		if (!isMobile && bgImage) {
 			element.style.backgroundImage = `url(${bgImage})`;
+			return;
+		}
+
+		if (isMobile) {
+			if (bgImageMobileRetina && isRetina) {
+				element.style.backgroundImage = `url(${bgImageMobileRetina})`;
+			} else if (bgImageMobile) {
+				element.style.backgroundImage = `url(${bgImageMobile})`;
+			} else {
+				element.style.backgroundImage = `url(${bgImage})`;
+			}
 		}
 	};
 
@@ -31,14 +50,7 @@ export const lazyLoadBackground = () => {
 		});
 	};
 
-	const mutationObserver = new MutationObserver(() => {
-		observeElements();
-	});
-
-	mutationObserver.observe(document.body, {
-		childList: true,
-		subtree: true
-	});
-
 	observeElements();
+
+	return () => observer.disconnect();
 };

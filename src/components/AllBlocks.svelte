@@ -5,6 +5,8 @@
 	import Header from '$comps/Header/Header.svelte';
 	import Intro from '$comps/Intro/Intro.svelte';
 
+	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
+
 	export let lang;
 
 	let LeaderboardComponent;
@@ -80,6 +82,8 @@
 
 		return () => observer.disconnect();
 	});
+
+	onMount(lazyLoadBackground);
 </script>
 
 <div class="main">

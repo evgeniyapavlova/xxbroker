@@ -5,7 +5,6 @@
 	viewBox="0 0 1170 651"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
-	style="width: 100%; max-width: 100%; height: auto;"
 >
 	<g clip-path="url(#clip0_9_12424)">
 		<rect y="58.8528" width="253" height="548" rx="32" fill="#2A2A2A" />

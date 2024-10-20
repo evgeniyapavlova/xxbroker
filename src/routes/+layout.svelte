@@ -5,7 +5,7 @@
 	import { searchString } from '$lib/stores/affs';
 	import { linkLogin, linkRegister, linkTraderoom } from '$lib/stores/reg_link';
 
-	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
+	// import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
 
 	import '$lib/styles/_constants.scss';
 	import '$lib/styles/fonts.css';
@@ -14,7 +14,7 @@
 	import './styles.scss';
 
 	onMount(() => {
-		lazyLoadBackground();
+		// lazyLoadBackground();
 
 		$searchString = getURLParameters();
 

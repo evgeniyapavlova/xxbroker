@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
 	import translation from '$lib/translations/achievements';
 
 	import AchievementItem from './AchievementItem.svelte';
@@ -29,6 +31,8 @@
 			image: award_3
 		}
 	];
+
+	onMount(lazyLoadBackground);
 </script>
 
 <div class="title">
