@@ -13,7 +13,8 @@
 		getRandomTime,
 		sortByProfit,
 		getRandomIndexes,
-		randomizeForThreeRows
+		randomizeForThreeRows,
+		getRandomCountry
 	} from './utils';
 
 	import './scss/table.scss';
@@ -29,7 +30,7 @@
 		date: getTodayDate($lang),
 		type: Math.random() < 0.5,
 		profit: Math.floor(Math.random() * (9999 - 100 + 1)) + 100,
-		country: Math.floor(Math.random() * 17)
+		country: getRandomCountry()
 	}));
 
 	let positions = [];

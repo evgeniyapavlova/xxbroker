@@ -7,6 +7,7 @@ export const langCodes = {
 };
 
 export const countries = [
+	'Brazil',
 	'Argentina',
 	'Colombia',
 	'Mexico',

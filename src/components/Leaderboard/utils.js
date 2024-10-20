@@ -49,3 +49,13 @@ export const randomizeForThreeRows = (data, randomIndexes) => {
 		return item;
 	});
 };
+
+export function getRandomCountry() {
+	const random = Math.floor(Math.random() * 24);
+
+	if (random <= 7) {
+		return 0;
+	} else {
+		return random - 7;
+	}
+}
