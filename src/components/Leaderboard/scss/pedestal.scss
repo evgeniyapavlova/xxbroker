@@ -125,6 +125,9 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 90px;
+		img {
+			border-radius: 52px;
+		}
 
 		@media screen and (max-width: var.$tab-m) {
 			flex-direction: column;

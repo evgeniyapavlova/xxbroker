@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 	import translation from '$lib/translations/leaderboard';
 
 	import LiveTag from './LiveTag.svelte';

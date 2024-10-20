@@ -28,4 +28,7 @@
 	.cell-caption {
 		color: var(--moss-600);
 	}
+	img {
+		border-radius: 40px;
+	}
 </style>

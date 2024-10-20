@@ -1,85 +1,41 @@
 <script>
 	import { inview } from 'svelte-inview';
+	import { lang } from '$lib/stores/lang';
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
 	import { tick } from 'svelte';
-	import { tableData, assets } from './tableData';
+	import { names, assets, countries } from './tableData';
 	import CellWithImg from './CellWithImg.svelte';
 	import ArrowUp from './ArrowUp.svelte';
+	import {
+		formatProfit,
+		getTodayDate,
+		getRandomTime,
+		sortByProfit,
+		getRandomIndexes,
+		randomizeForThreeRows
+	} from './utils';
 
 	import './scss/table.scss';
 
 	export let content, buy, sell;
 
-	const county = 'Brazil';
 	const assetType = 'Crypto';
-
-	function getTodayDate() {
-		const today = new Date();
-		const day = today.getDate().toString().padStart(2, '0');
-		const options = { month: 'short' };
-		const month = today.toLocaleDateString('en-US', options);
-		return `${day} ${month}`;
-	}
-
-	function formatTime(time) {
-		const timeArray = time.toTimeString().split(' ')[0].split(':');
-		return timeArray[0] + ':' + timeArray[1];
-	}
-
-	const formatProfit = (profit) => '+$' + profit.toLocaleString('en-US');
-
-	function getRandomTime() {
-		const now = new Date();
-		const past = new Date(now.getTime() - 5 * 60 * 1000);
-		const randomTime = new Date(past.getTime() + Math.random() * (now - past));
-		return formatTime(randomTime);
-	}
-
-	let leaders = Array.from({ length: 17 }, (_, i) => ({
+	let leaders = Array.from({ length: 40 }, (_, i) => ({
 		id: i + 1,
-		name: tableData[i].name,
+		name: names[i],
 		asset: Math.floor(Math.random() * 7) + 1,
 		time: getRandomTime(),
-		date: getTodayDate(),
+		date: getTodayDate($lang),
 		type: Math.random() < 0.5,
-		profit: Math.floor(Math.random() * (9999 - 100 + 1)) + 100
+		profit: Math.floor(Math.random() * (9999 - 100 + 1)) + 100,
+		country: Math.floor(Math.random() * 17)
 	}));
-
-	function sortByProfit(arr) {
-		return arr.sort((a, b) => b.profit - a.profit);
-	}
-
-	function randomizeForThreeRows(data, randomIndexes) {
-		return data.map((item, index) => {
-			if (randomIndexes.includes(index)) {
-				return {
-					...item,
-					asset: Math.floor(Math.random() * 7) + 1,
-					time: formatTime(new Date()),
-					type: Math.random() < 0.5,
-					profit: Math.floor(Math.random() * (9999 - 100 + 1)) + 100
-				};
-			}
-			return item;
-		});
-	}
 
 	let positions = [];
 
-	function getRandomIndexes() {
-		const indexes = [];
-		while (indexes.length < 3) {
-			const randIndex = Math.floor(Math.random() * leaders.length);
-			if (!indexes.includes(randIndex)) {
-				indexes.push(randIndex);
-			}
-		}
-		return indexes;
-	}
-
 	async function animateTableUpdate() {
-		const randomIndexes = getRandomIndexes();
+		const randomIndexes = getRandomIndexes(leaders);
 
 		const rows = Array.from(document.querySelectorAll('tbody tr'));
 		positions = rows.map((row) => {
@@ -178,7 +134,7 @@
 				<td class="user">
 					<CellWithImg src="{base}/images/leaderboard/avatars/{leader.id}.webp">
 						<svelte:fragment slot="title">{leader.name}</svelte:fragment>
-						<svelte:fragment slot="caption">{county}</svelte:fragment>
+						<svelte:fragment slot="caption">{countries[leader.country]}</svelte:fragment>
 					</CellWithImg>
 					<img
 						src="{base}/images/leaderboard/assets/{leader.asset}.webp"
@@ -195,7 +151,7 @@
 					</CellWithImg>
 				</td>
 				<td>{leader.time}</td>
-				<td>{leader.date}</td>
+				<td style="white-space: nowrap;">{leader.date}</td>
 				<td class:buy={leader.type} class="deal-type">
 					<span><ArrowUp />{leader.type ? buy : sell}</span>
 				</td>
