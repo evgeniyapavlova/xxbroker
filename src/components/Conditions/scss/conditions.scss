@@ -2,6 +2,9 @@
 
 .conditions {
 	// overflow: hidden;
+	h2 {
+		position: relative;
+	}
 
 	@media screen and (max-width: 380px) {
 		padding-left: 0;
@@ -17,12 +20,22 @@
 	}
 
 	&-content-wrap {
-		background-image: radial-gradient(
-				circle at center 0,
-				rgba(39, 140, 80, 0.1),
-				rgba(21, 26, 23, 0)
-			),
-			linear-gradient(to bottom, var(--moss-200), var(--moss-50));
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: '';
+			inset: 0 0 -160px 0;
+			z-index: 0;
+			border-radius: inherit;
+			background-image: radial-gradient(
+					circle at center 0,
+					rgba(39, 140, 80, 0.1),
+					rgba(21, 26, 23, 0)
+				),
+				linear-gradient(to bottom, var(--moss-200), var(--moss-50));
+		}
+
 		border-radius: 72px 72px 0 0;
 		padding: 128px 40px 0;
 
@@ -53,6 +66,7 @@
 		max-width: 1028px;
 		margin-left: auto;
 		margin-right: auto;
+		position: relative;
 
 		@media screen and (max-width: var.$desk-s) {
 			gap: 32px;
