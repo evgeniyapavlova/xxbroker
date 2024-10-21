@@ -1,4 +1,4 @@
-export const assets = ['Bitcoin', 'Corn', 'ZCash', 'Reddit', 'Dash', 'Ripple', 'Bitcoin'];
+export const assets = ['Bitcoin', 'Ethereum', 'ZCash', 'Reddit', 'Dash', 'Ripple', 'Bitcoin'];
 
 export const langCodes = {
 	en: 'en-US',

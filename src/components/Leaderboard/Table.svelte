@@ -92,7 +92,7 @@
 <div class="pedestal" use:inview={options} on:inview_change={handleChange}>
 	{#each [1, 2, 3] as item, index}
 		<div class="pedestal-item-wrap">
-			<img src="{base}/images/leaderboard/crown.png" alt="" class="pedestal-crown" loading="lazy" />
+			<img src="{base}/images/leaderboard/Frame.svg" alt="" class="pedestal-crown" loading="lazy" />
 			<div class="pedestal-lider">
 				<img
 					src="{base}/images/leaderboard/avatars/{leaders[index].id}.webp"
@@ -138,13 +138,13 @@
 						<svelte:fragment slot="caption">{countries[leader.country]}</svelte:fragment>
 					</CellWithImg>
 					<img
-						src="{base}/images/leaderboard/assets/{leader.asset}.webp"
+						src="{base}/images/leaderboard/assets/{leader.asset}.svg"
 						class="mobile-asset-img"
 						alt="Asset"
 					/>
 				</td>
 				<td class="asset">
-					<CellWithImg src="{base}/images/leaderboard/assets/{leader.asset}.webp">
+					<CellWithImg src="{base}/images/leaderboard/assets/{leader.asset}.svg">
 						<svelte:fragment slot="title">{assets[leader.asset - 1]}</svelte:fragment>
 						<svelte:fragment slot="caption"
 							>{leader.asset === 4 ? 'Stocks' : assetType}</svelte:fragment
