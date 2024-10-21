@@ -56,6 +56,7 @@
 		loadConditionsComponent();
 		loadFeaturesComponent();
 		loadAchievementsComponent();
+		loadPeopleComponent();
 	});
 
 	let section;
@@ -65,7 +66,6 @@
 			entries.forEach(
 				(entry) => {
 					if (entry.isIntersecting) {
-						loadPeopleComponent();
 						loadFooterComponent();
 						loadReviewsComponent();
 						observer.unobserve(entry.target);
