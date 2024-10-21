@@ -1,1 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill-rule="evenodd" xmlns:v="https://vecta.io/nano"><rect fill="#f0f0f0" width="56" height="56" rx="28"/><path fill="#343434" d="M27.871 9l-.259.866v25.12l.26.255 11.87-6.893z"/><path fill="#8c8c8c" d="M27.871 9L16 28.348l11.871 6.893V23.048z"/><path fill="#3c3c3b" d="M27.871 37.449l-.146.175v8.948l.146.42L39.75 30.558z"/><path fill="#8c8c8c" d="M27.871 46.991V37.45L16 30.559z"/><path fill="#141414" d="M27.871 35.24l11.872-6.892-11.872-5.3z"/><path fill="#393939" d="M16 28.348l11.871 6.893V23.048z"/></svg>
+
+<svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1815_11)">
+<rect width="64" height="64" rx="32" fill="#FFAD00"/>
+<circle cx="26" cy="31" r="3" fill="white"/>
+<circle cx="21" cy="37" r="3" fill="white"/>
+<circle cx="34" cy="31" r="3" fill="white"/>
+<circle cx="30" cy="24" r="3" fill="white"/>
+<circle cx="42" cy="31" r="3" fill="white"/>
+<circle cx="38" cy="24" r="3" fill="white"/>
+<circle cx="35" cy="16" r="3" fill="white"/>
+<circle cx="43" cy="16" r="3" fill="white"/>
+<circle cx="46" cy="24" r="3" fill="white"/>
+<circle cx="29" cy="38" r="3" fill="white"/>
+<circle cx="25" cy="45" r="3" fill="white"/>
+<circle cx="37" cy="38" r="3" fill="white"/>
+<circle cx="33" cy="45" r="3" fill="white"/>
+<path d="M18.9559 25.9318C18.9559 25.9318 17.9603 25.5868 18.0425 26.2719C18.4333 29.5297 18.0227 32.6892 16.4882 36.0598C13.1373 43.4205 16.6722 49.7515 20.7166 52.0866C24.761 54.4216 27.837 51.778 25.2419 41.6994C23.888 36.4412 23.3953 30.2416 19.916 25.5835C19.1455 24.5519 18.9559 25.9318 18.9559 25.9318Z" fill="white"/>
+<circle cx="19" cy="26" r="1" fill="white"/>
+<path d="M44.5225 40.7265C44.5225 40.7265 45.319 41.4162 44.6846 41.6876C41.6679 42.978 39.137 44.9134 36.9852 47.9276C32.2861 54.51 25.0359 54.6142 20.9915 52.2791C16.947 49.9441 17.6985 45.9584 27.7244 43.1665C32.955 41.7099 38.5704 39.0368 44.3441 39.7209C45.6227 39.8724 44.5225 40.7265 44.5225 40.7265Z" fill="white"/>
+<circle cx="1" cy="1" r="1" transform="matrix(-0.5 -0.866025 -0.866025 0.5 45.8074 41.0885)" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_1815_11">
+<rect width="64" height="64" fill="white"/>
+</clipPath>
+</defs>
+</svg>
