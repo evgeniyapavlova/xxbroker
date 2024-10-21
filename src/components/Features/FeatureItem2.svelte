@@ -61,7 +61,7 @@
 </script>
 
 <div class="feature-item" id="feature-2" use:inview={options} on:inview_change={handleChange}>
-	<div class="feature-icon" class:visible={isInView}>
+	<div class="feature-icon">
 		<img src={icon} alt="Analysis tools feature icon" />
 	</div>
 

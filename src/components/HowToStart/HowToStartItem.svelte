@@ -19,7 +19,7 @@
 
 <style>
 	.start-number.visible {
-		opacity: 0.4;
+		opacity: 0.6;
 		transform: translateY(0);
 	}
 

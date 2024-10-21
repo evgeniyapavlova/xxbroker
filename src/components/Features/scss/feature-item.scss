@@ -208,15 +208,3 @@
 		margin-top: 40px;
 	}
 }
-
-.feature-icon {
-	transform: scale(0);
-	opacity: 0;
-	transition:
-		opacity 0.4s ease,
-		transform 0.4s ease;
-}
-.feature-icon.visible {
-	opacity: 1;
-	transform: scale(1);
-}

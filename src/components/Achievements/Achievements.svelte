@@ -41,5 +41,6 @@
 </div>
 <div class="achievements-list">
 	{#each items as item, index}
-		<AchievementItem {index} data={data[index]} {item} />{/each}
+		<AchievementItem {index} data={data[index]} {item} />
+	{/each}
 </div>

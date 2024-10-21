@@ -13,7 +13,7 @@
 			title: 'Investors community',
 			caption:
 				'Multi-charting, 100+ indicators, widgets, and graphical tools for supreme price analysis.',
-			items: ['Leader&shy;board', 'Chats &<br />Support']
+			items: ['Leader-<br />board', 'Chats &<br />Support']
 		},
 		es: {
 			title: 'Comunidad de inversores',
@@ -62,7 +62,7 @@
 </script>
 
 <div class="feature-item" id="feature-3" use:inview={options} on:inview_change={handleChange}>
-	<div class="feature-icon" class:visible={isInView}>
+	<div class="feature-icon">
 		<img src={icon} alt="Analysis tools feature icon" />
 	</div>
 	<div class="feature-content">
