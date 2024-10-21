@@ -88,16 +88,17 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 100px;
-		height: 100px;
-		transform: translate(-50%, -50%);
+		width: 1000px;
+		height: 1000px;
+		transform: translate(-50%, -50%) scale(0);
 		border: 1px solid #356a4a;
 		background-image: radial-gradient(#161d17, #23362b);
 		border-radius: 50%;
-		opacity: 0;
 		animation: ripple 10s infinite;
 		animation-delay: calc(var(--i) * 2.5s);
-		will-change: opacity, width, height;
+		will-change: opacity, transform;
+		transform-style: preserve-3d;
+		transform-origin: center center;
 	}
 
 	.circle:nth-child(1) {
@@ -115,19 +116,17 @@
 
 	@keyframes ripple {
 		0% {
-			width: 0;
-			height: 0;
+			transform: translate(-50%, -50%) scale(0);
 			opacity: 0.5;
 		}
-		/* 50% {
-			width: 200px;
-			height: 200px;
-			opacity: 0.5;
-		} */
-		100% {
-			width: 1000px;
-			height: 1000px;
+
+		99.9% {
+			transform: translate(-50%, -50%) scale(1);
 			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(1);
 		}
 	}
 </style>

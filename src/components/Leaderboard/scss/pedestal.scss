@@ -71,19 +71,27 @@
 		bottom: calc(100% + 1px);
 		left: -1px;
 		width: calc(100% + 2px);
+		height: 100px;
+
+		@media screen and (max-width: var.$tab-m) {
+			height: 70px;
+		}
 
 		&::before {
 			transform-origin: bottom;
 			display: block;
 			transform: rotateX(40deg);
 			content: '';
-			height: 100px;
+			height: 100%;
 			width: 100%;
 			border: 1px solid #499969;
 			border-top: none;
 			border-bottom: none;
 			background-image: linear-gradient(to top, #29824d, rgba(24, 24, 22, 0));
 			box-sizing: border-box;
+			@media screen and (max-width: var.$tab-m) {
+				transform: rotateX(70deg);
+			}
 		}
 
 		&::after {

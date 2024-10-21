@@ -16,7 +16,7 @@
 <div class="header-menu">
 	<div class="header-menu-desktop">
 		{#each content.menu as item, index}
-			<a class="nav-link anchor-link" href="#{menuLinks[index]}">
+			<a class="nav-link anchor-link" href="#{menuLinks[index]}" class:nav-link-flex={index === 0}>
 				{item}
 				{#if index === 0}
 					<Tag>{content.new}</Tag>

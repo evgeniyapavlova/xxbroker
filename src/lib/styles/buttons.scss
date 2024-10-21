@@ -105,4 +105,9 @@ button {
 	&:active {
 		color: var(--acid-200);
 	}
+	&-flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }

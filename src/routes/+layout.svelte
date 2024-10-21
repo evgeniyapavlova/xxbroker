@@ -5,17 +5,25 @@
 	import { searchString } from '$lib/stores/affs';
 	import { linkLogin, linkRegister, linkTraderoom } from '$lib/stores/reg_link';
 
-	// import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
-
 	import '$lib/styles/_constants.scss';
-	import '$lib/styles/fonts.css';
 	import '$lib/styles/typography.scss';
 	import '$lib/styles/buttons.scss';
 	import './styles.scss';
 
-	onMount(() => {
-		// lazyLoadBackground();
+	let isStyleLoaded = false;
 
+	async function loadStyle() {
+		if (!isStyleLoaded) {
+			await import('../lib/styles/fonts.css');
+			isStyleLoaded = true;
+		}
+	}
+
+	onMount(async () => {
+		loadStyle();
+	});
+
+	onMount(() => {
 		$searchString = getURLParameters();
 
 		$linkRegister += $lang + '/register' + $searchString;

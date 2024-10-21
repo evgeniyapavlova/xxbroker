@@ -40,11 +40,11 @@
 		<slot name="toggle-button" />
 	</button>
 
-	{#if isExpanded}
-		<menu id={menuId} class="dropdown-menu">
-			<div class="menu-inner">
-				<slot name="content" />
-			</div>
-		</menu>
-	{/if}
+	<!-- {#if isExpanded} -->
+	<menu id={menuId} class="dropdown-menu" class:visible={isExpanded}>
+		<div class="menu-inner">
+			<slot name="content" />
+		</div>
+	</menu>
+	<!-- {/if} -->
 </div>

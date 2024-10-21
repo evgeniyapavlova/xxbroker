@@ -1,5 +1,5 @@
 <script>
-	// import { onMount } from 'svelte';
+	import { inview } from 'svelte-inview';
 
 	import translation from '$lib/translations/how_to_start';
 
@@ -13,49 +13,19 @@
 	const content = translation[lang];
 	const { h2, items } = content;
 
-	let section;
-
-	// let HowToStartItemComponent;
-	// async function loadHowToStartItemComponent() {
-	// 	const module = await import('./HowToStartItem.svelte');
-	// 	HowToStartItemComponent = module.default;
-	// }
-
-	// onMount(() => {
-	// 	const observer = new IntersectionObserver((entries) => {
-	// 		entries.forEach(
-	// 			(entry) => {
-	// 				if (entry.isIntersecting) {
-	// 					loadHowToStartItemComponent();
-	// 					observer.unobserve(entry.target);
-	// 				}
-	// 			},
-	// 			{
-	// 				root: null,
-	// 				rootMargin: '800px 0px 0px 0px'
-	// 			}
-	// 		);
-	// 	});
-
-	// 	observer.observe(section);
-
-	// 	return () => observer.disconnect();
-	// });
+	let isInView;
+	const options = {
+		threshold: 1,
+		unobserveOnEnter: true
+	};
+	const handleChange = ({ detail }) => (isInView = detail.inView);
 </script>
 
-<h2>
+<h2 use:inview={options} on:inview_change={handleChange}>
 	{h2}
 </h2>
-<div class="start-list" bind:this={section}>
+<div class="start-list">
 	{#each items as item, index}
-		<!-- {#if HowToStartItemComponent}
-			<svelte:component
-				this={HowToStartItemComponent}
-				{index}
-				{item}
-				content={itemsContent[index]}
-			/>
-		{/if} -->
-		<HowToStartItem {index} {item} content={itemsContent[index]} />
+		<HowToStartItem {index} {item} content={itemsContent[index]} {isInView} />
 	{/each}
 </div>

@@ -29,15 +29,16 @@ export const lazyLoadBackground = () => {
 		(entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
+					console.log(entry);
 					setBackgroundImage(entry.target);
 					observer.unobserve(entry.target);
 				}
 			});
 		},
 		{
-			root: null,
-			rootMargin: '992px 0px 0px 0px',
-			threshold: 0
+			// root: null,
+			rootMargin: '500px 0px 0px 0px'
+			// threshold: 0
 		}
 	);
 
@@ -46,6 +47,8 @@ export const lazyLoadBackground = () => {
 		elements.forEach((element) => {
 			if (!element.style.backgroundImage) {
 				observer.observe(element);
+			} else {
+				observer.unobserve(element);
 			}
 		});
 	};

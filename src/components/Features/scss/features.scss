@@ -1,6 +1,7 @@
 @use '$lib/styles/_constants' as var;
 
 .features {
+	position: relative;
 	@media screen and (max-width: 380px) {
 		padding-left: 0;
 		padding-right: 0;
