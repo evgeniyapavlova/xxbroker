@@ -1,11 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import { lazyLoadBackground } from '$lib/utils/lazyLoadBackground';
-	import img1 from './img/progressive_desktop_2x/1.jpg?enhanced';
-	import img2_1 from './img/progressive_desktop_2x/2-1.jpg?enhanced';
-	import img2_2 from './img/progressive_desktop_2x/2-2.jpg?enhanced';
-	import img3 from './img/progressive_desktop_2x/3.jpg?enhanced';
-	import img4 from './img/progressive_desktop_2x/4.jpg?enhanced';
+	import img1 from './img/progressive_desktop_2x/tinified/1.jpg?enhanced';
+	import img2_1 from './img/progressive_desktop_2x/tinified/2-1.jpg?enhanced';
+	import img2_2 from './img/progressive_desktop_2x/tinified/2-2.jpg?enhanced';
+	import img3 from './img/progressive_desktop_2x/tinified/3.jpg?enhanced';
+	import img4 from './img/progressive_desktop_2x/tinified/4.jpg?enhanced';
 
 	import './scss/people.scss';
 
