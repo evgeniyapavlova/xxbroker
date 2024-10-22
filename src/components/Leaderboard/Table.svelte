@@ -111,7 +111,9 @@
 				</div>
 			</div>
 			<div class="pedestal-item">
-				<div class="pedestal-block"></div>
+				<div class="pedestal-block">
+					<div class="pedestal-block-perspective"></div>
+				</div>
 				<div class="number number-{index} number-italic" class:visible={isInView}>{item}</div>
 			</div>
 		</div>

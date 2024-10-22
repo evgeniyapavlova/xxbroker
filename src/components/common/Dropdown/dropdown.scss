@@ -58,3 +58,20 @@
 		}
 	}
 }
+
+#download-assets-wrap {
+	.dropdown-menu {
+		width: 226px;
+		right: auto;
+		left: 0;
+		transform-origin: left top;
+		top: 33px;
+	}
+	.menu-inner {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 8px;
+		flex-direction: row;
+	}
+}
