@@ -6,6 +6,7 @@
 	let isExpanded = false;
 
 	export let buttonClass = '',
+		isContext = false,
 		id;
 
 	const wrapId = `${id}-wrap`;
@@ -31,20 +32,31 @@
 </script>
 
 <div class="dropdown-wrap" id={wrapId}>
-	<button
-		class={buttonClass}
-		on:click={() => (isExpanded = !isExpanded)}
-		class:is-expanded={isExpanded}
-		aria-label="Open menu"
-	>
-		<slot name="toggle-button" />
-	</button>
+	{#if isContext}
+		<button
+			class={buttonClass}
+			on:contextmenu={(e) => {
+				e.preventDefault();
+				isExpanded = !isExpanded;
+			}}
+			class:is-expanded={isExpanded}
+			aria-label="Open menu"
+		>
+			<slot name="toggle-button" />
+		</button>
+	{:else}
+		<button
+			class={buttonClass}
+			on:click={() => (isExpanded = !isExpanded)}
+			class:is-expanded={isExpanded}
+			aria-label="Open menu"
+		>
+			<slot name="toggle-button" />
+		</button>{/if}
 
-	<!-- {#if isExpanded} -->
 	<menu id={menuId} class="dropdown-menu" class:visible={isExpanded}>
 		<div class="menu-inner">
 			<slot name="content" />
 		</div>
 	</menu>
-	<!-- {/if} -->
 </div>

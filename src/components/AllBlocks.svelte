@@ -57,30 +57,8 @@
 		loadFeaturesComponent();
 		loadAchievementsComponent();
 		loadPeopleComponent();
-	});
-
-	let section;
-
-	onMount(() => {
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(
-				(entry) => {
-					if (entry.isIntersecting) {
-						loadFooterComponent();
-						loadReviewsComponent();
-						observer.unobserve(entry.target);
-					}
-				},
-				{
-					root: null,
-					rootMargin: '800px 0px 0px 0px'
-				}
-			);
-		});
-
-		observer.observe(section);
-
-		return () => observer.disconnect();
+		loadReviewsComponent();
+		loadFooterComponent();
 	});
 
 	onMount(lazyLoadBackground);
@@ -97,7 +75,7 @@
 		{/if}
 	</section>
 
-	<section id="start" bind:this={section}>
+	<section id="start">
 		{#if HowToStartComponent}
 			<svelte:component this={HowToStartComponent} {lang} />
 		{/if}

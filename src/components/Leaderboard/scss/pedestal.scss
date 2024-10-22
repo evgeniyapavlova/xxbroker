@@ -43,79 +43,85 @@
 	&-item {
 		position: relative;
 		height: 162px;
-		border: 1px solid #499969;
-		border-bottom: none;
-		background-image: linear-gradient(to bottom, #29824d 0%, rgba(24, 24, 22, 0) 100%);
+		border-top: 1px solid #499969;
+		background-image: linear-gradient(180deg, #29824d 0%, #1c241e 75%, rgba(24, 24, 22, 0) 100%);
 		opacity: 0.5;
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 1px;
+			background: linear-gradient(180deg, #499969 0%, #1a201c 100%);
+		}
+
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
 
 		@media screen and (max-width: var.$tab-m) {
 			height: 152px;
-		}
-
-		&::after {
-			width: calc(100% + 4px);
-			content: '';
-			height: calc(100% + 4px);
-			display: block;
-			background-image: linear-gradient(to top, var(--moss-200), transparent);
-			position: absolute;
-			inset: -2px -2px;
 		}
 	}
 	&-block {
 		perspective: 160px;
 		position: absolute;
 		bottom: calc(100% + 1px);
-		left: -1px;
-		width: calc(100% + 2px);
-		height: 100px;
+		width: 100%;
+		height: 60px;
 
 		@media screen and (max-width: var.$tab-m) {
 			height: 70px;
 		}
 
-		&::before {
+		&-perspective {
 			transform-origin: bottom;
 			display: block;
 			transform: rotateX(40deg);
-			content: '';
 			height: 100%;
 			width: 100%;
-			border: 1px solid #499969;
-			border-top: none;
-			border-bottom: none;
-			background-image: linear-gradient(to top, #29824d, rgba(24, 24, 22, 0));
+			background-image: linear-gradient(to top, #29824d, #1c241e 80%, rgba(24, 24, 22, 0));
 			box-sizing: border-box;
 			@media screen and (max-width: var.$tab-m) {
 				transform: rotateX(70deg);
 			}
-		}
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 1px;
+				background: linear-gradient(0deg, #499969 0%, #1a201c 100%);
+			}
 
-		&::after {
-			content: '';
-			height: 100%;
-			width: 100%;
-			transform: rotateX(40deg);
-			background-image: linear-gradient(to bottom, var(--moss-200), transparent);
-			display: block;
-			position: absolute;
-			transform-origin: bottom;
-			bottom: 0;
-			box-sizing: border-box;
+			&::before {
+				left: 0;
+			}
+			&::after {
+				right: 0;
+			}
 		}
 	}
 
 	.number {
-		background-image: linear-gradient(to bottom, #a5f2c4, var(--moss-200) 75%);
 		opacity: 0.5;
+		background: linear-gradient(180deg, #a5f2c4 0%, rgba(22, 22, 22, 0) 75%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 		width: 100%;
 		text-align: center;
 		position: absolute;
 		bottom: -70px;
 		z-index: 1;
+		letter-spacing: -1.6px;
+		text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.1);
 		@media screen and (max-width: var.$tab-m) {
 			font-size: 120px;
 			bottom: -45px;
@@ -177,3 +183,5 @@
 		}
 	}
 }
+
+// background: linear-gradient(180deg, #2D573E 0%, #1A201C 100%);
