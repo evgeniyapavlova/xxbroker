@@ -1,4 +1,6 @@
 <script>
+	import { inview } from 'svelte-inview';
+
 	import Logo from '$common/LogoFooter.svelte';
 
 	import translation, { links } from '$lib/translations/footer';
@@ -9,9 +11,16 @@
 	const content = translation[lang];
 
 	let currentYear = new Date().getFullYear();
+
+	export let isFooterInView = false;
+	const options = {
+		threshold: 0,
+		rootMargin: '40px'
+	};
+	const handleChange = ({ detail }) => (isFooterInView = detail.inView);
 </script>
 
-<section class="footer">
+<section class="footer" use:inview={options} on:inview_change={handleChange}>
 	<footer>
 		<div class="footer-links">
 			{#each content.items as item, index1}

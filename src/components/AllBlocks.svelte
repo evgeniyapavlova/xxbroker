@@ -62,12 +62,14 @@
 	});
 
 	onMount(lazyLoadBackground);
+
+	let isFooterInView;
 </script>
 
 <div class="main">
 	<div class="intro-bgr has-bgr" data-bgimage="{base}/images/bgr/intro_bgr.svg">
 		<Header {lang} />
-		<Intro {lang} />
+		<Intro {isFooterInView} {lang} />
 	</div>
 	<section class="leaderboard" id="leaderboard">
 		{#if LeaderboardComponent}
@@ -104,6 +106,6 @@
 		<svelte:component this={ReviewsComponent} {lang} />
 	{/if}
 	{#if FooterComponent}
-		<svelte:component this={FooterComponent} {lang} />
+		<svelte:component this={FooterComponent} {lang} bind:isFooterInView />
 	{/if}
 </div>
