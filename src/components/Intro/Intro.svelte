@@ -8,7 +8,7 @@
 	import Button from '$common/Button.svelte';
 
 	import './scss/intro.scss';
-	export let lang;
+	export let lang, isFooterInView;
 
 	const translation = {
 		en: {
@@ -85,4 +85,4 @@
 	</section>
 </div>
 
-<FloatingButton visible={!isInView} />
+<FloatingButton visible={!isInView && !isFooterInView} />
