@@ -29,7 +29,6 @@ export const lazyLoadBackground = () => {
 		(entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					console.log(entry);
 					setBackgroundImage(entry.target);
 					observer.unobserve(entry.target);
 				}
