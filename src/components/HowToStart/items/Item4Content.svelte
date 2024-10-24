@@ -33,7 +33,7 @@
 		<div class="card-data">
 			<div class="card-data-block">
 				<span>{content.card_holder}</span>
-				<p>Tarem Peachko</p>
+				<p>Pedro Mendes</p>
 			</div>
 			<div class="card-data-block">
 				<span>{content.valid}</span>
