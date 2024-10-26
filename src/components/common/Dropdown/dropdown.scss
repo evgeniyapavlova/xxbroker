@@ -59,6 +59,14 @@
 	}
 }
 
+.app[data-lang='pt'] {
+	.header-menu-mobile {
+		.dropdown-menu {
+			width: 200px;
+		}
+	}
+}
+
 #download-assets-wrap {
 	.dropdown-menu {
 		width: 226px;
