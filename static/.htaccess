@@ -28,10 +28,9 @@
 
 RewriteEngine On
 
-RewriteCond %{REQUEST_URI} ^(.+)/$ [NC]
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/$ $1 [R=301,L]
+RewriteCond %{REQUEST_URI} ^/(en|es|pt)/$ [NC]
+RewriteRule ^(en|es|pt)/$ https://xxbroker.com/$1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} ^/(es|en|pt)/?$ [NC]
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteRule ^(es|en|pt)/?$ $1.html [NC,L]

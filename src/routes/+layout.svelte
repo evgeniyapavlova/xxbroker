@@ -32,7 +32,7 @@
 	});
 </script>
 
-<div class="app">
+<div class="app" data-lang={$lang}>
 	<slot />
 </div>
 
