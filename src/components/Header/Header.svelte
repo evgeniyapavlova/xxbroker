@@ -7,7 +7,8 @@
 
 	import './scss/header.scss';
 
-	export let lang;
+	export let lang,
+		isMainPage = true;
 	const translation = {
 		en: {
 			menu: ['Leaderboard', 'How to start', 'Features', 'Awards'],
@@ -37,9 +38,13 @@
 <section class="header-wrap" id="header">
 	<header>
 		<DownloadLogo />
+		{#if isMainPage}
+			<HeaderMenu {content} />
+			<LangSwitcher />
+		{:else}
+			<div style="flex-grow: 1;"></div>
+		{/if}
 
-		<HeaderMenu {content} />
-		<LangSwitcher />
 		<LoginButton><div id="header-login-label">{content.login}</div></LoginButton>
 		<GetStartedButton>{content.get_started}</GetStartedButton>
 	</header>
