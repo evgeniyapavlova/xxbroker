@@ -1,0 +1,107 @@
+@use '$lib/styles/_constants' as var;
+.devices {
+	&-wrap {
+		margin: 88px auto 0;
+
+		border-radius: 48px;
+		border: 1px solid var(--moss-400);
+		padding: 52px 20px;
+		text-align: center;
+		max-width: 690px;
+
+		@media screen and (max-width: var.$tab-m) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	&-content {
+		&-title {
+			line-height: 1.2;
+			color: var(--moss-800);
+			font-weight: 600;
+			font-feature-settings:
+				'liga' off,
+				'clig' off;
+			font-family: 'Mabry Pro';
+			font-size: 32px;
+			font-weight: 500;
+		}
+		&-desc {
+			color: var(--moss-600);
+			font-size: 16px;
+			line-height: 1.5;
+			font-weight: 400;
+			margin-bottom: 32px;
+			font-family: Inter;
+		}
+	}
+	&-btns {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+
+		@media screen and (max-width: 550px) {
+			flex-direction: column;
+			gap: 24px;
+			align-items: center;
+		}
+	}
+}
+
+.device {
+	&-btn {
+		background-color: var(--moss-200);
+		padding: 13px 18px 13px 12px;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		overflow: hidden;
+		gap: 8px;
+		cursor: pointer;
+		&:hover {
+			.device-icon {
+				svg {
+					transform: translateY(50px);
+				}
+				.device-hover {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+	&-icon {
+		height: 40px;
+		width: 40px;
+		padding: 6px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+
+		svg {
+			position: absolute;
+			left: 6px;
+			top: 6px;
+			transition: transform ease-in-out 0.2s;
+		}
+
+		.device-hover {
+			transform: translateY(-50px);
+		}
+	}
+	&-text {
+		line-height: 1.2;
+		font-family: Inter;
+		text-align: left;
+	}
+	&-app-name {
+		color: var(--moss-800);
+		font-size: 16px;
+		font-weight: 500;
+		margin-bottom: 2px;
+	}
+	&-app-info {
+		color: var(--moss-600);
+	}
+}
