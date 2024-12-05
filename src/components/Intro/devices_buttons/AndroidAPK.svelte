@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<a class="device-btn" href="{base}/files/xxbroker_8.50.4(3071).apk">
+<a class="device-btn" href="{base}/files/xxbroker_8.50.4(3071).apk" rel="external">
 	<div class="device-icon">
 		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
 			<path

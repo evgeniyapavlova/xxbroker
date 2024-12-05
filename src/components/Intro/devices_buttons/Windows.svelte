@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<a class="device-btn" href="{base}/files/XXBROKER.msi">
+<a class="device-btn" href="{base}/files/XXBROKER.msi" rel="external">
 	<div class="device-icon">
 		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
 			<path
