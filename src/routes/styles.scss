@@ -60,6 +60,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 160px;
+	overflow: hidden;
 	@media screen and (max-width: var.$desk-l) {
 		gap: 144px;
 	}

@@ -54,6 +54,12 @@
 			};
 		}
 	});
+
+	$: {
+		if (typeof document !== 'undefined') {
+			document.body.style.overflow = isQROpen ? 'hidden' : 'unset';
+		}
+	}
 </script>
 
 {#if $device === 'ios' || $device === 'android'}
@@ -67,56 +73,65 @@
 {/if}
 
 {#if isQROpen}
-	<div
-		id="qr-block"
-		class="qr-block"
-		transition:fade={{
-			duration: 200
-		}}
-	>
-		<button on:click={closeQR} class="qr-close-btn" aria-label="Close modal">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="20"
-				height="20"
-				viewBox="0 0 20 20"
-				fill="none"
-			>
-				<path
-					d="M15 5L5 15M5 5L15 15"
-					stroke="#818A85"
-					stroke-width="1.6"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				/>
-			</svg>
-		</button>
-		<div style="margin: 10px auto;" class="qr-logo-wrap">
-			<Logo />
-		</div>
-		<div class="qr-text">
-			<div class="qr-title">
-				{#if $device === 'ios'}
-					{translation[$lang].qr_title_ios}
-				{:else if $device === 'android'}
-					{translation[$lang].qr_title_android}
-				{:else}
-					{translation[$lang].qr_title}
-				{/if}
+	<div class="backdrop">
+		<div
+			id="qr-block"
+			class="qr-block"
+			transition:fade={{
+				duration: 200
+			}}
+		>
+			<button on:click={closeQR} class="qr-close-btn" aria-label="Close modal">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="none"
+				>
+					<path
+						d="M15 5L5 15M5 5L15 15"
+						stroke="#818A85"
+						stroke-width="1.6"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+			</button>
+			<div style="margin: 10px auto;" class="qr-logo-wrap">
+				<Logo />
 			</div>
-			<div class="qr-caption">{translation[$lang].qr_caption}</div>
-		</div>
+			<div class="qr-text">
+				<div class="qr-title">
+					{#if $device === 'ios'}
+						{translation[$lang].qr_title_ios}
+					{:else if $device === 'android'}
+						{translation[$lang].qr_title_android}
+					{:else}
+						{translation[$lang].qr_title}
+					{/if}
+				</div>
+				<div class="qr-caption">{translation[$lang].qr_caption}</div>
+			</div>
 
-		<div class="qr-code">
-			<QrCode />
-		</div>
-		<div class="qr-bottom-text">
-			{translation[$lang].available_on_devices}
+			<div class="qr-code">
+				<QrCode />
+			</div>
+			<div class="qr-bottom-text">
+				{translation[$lang].available_on_devices}
+			</div>
 		</div>
 	</div>
 {/if}
 
 <style>
+	.backdrop {
+		position: fixed;
+		inset: 0;
+		background: rgba(20, 24, 21, 0.87);
+		backdrop-filter: blur(5px);
+		z-index: 9;
+	}
 	:global(.qr-logo-wrap svg) {
 		display: block;
 	}
