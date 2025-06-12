@@ -22,15 +22,15 @@
 	export let content, buy, sell;
 
 	const assetType = 'Crypto';
-	let leaders = Array.from({ length: 40 }, (_, i) => ({
+	let leaders = Array.from({ length: 20 }, (_, i) => ({
 		id: i + 1,
 		name: names[i],
-		asset: Math.floor(Math.random() * 7) + 1,
+		asset: i === 5 ? 1 : Math.floor(Math.random() * 7) + 1,
 		time: getRandomTime(),
 		date: getTodayDate($lang),
 		type: Math.random() < 0.5,
 		profit: Math.floor(Math.random() * (9999 - 100 + 1)) + 100,
-		country: getRandomCountry()
+		country: i === 5 ? 0 : getRandomCountry()
 	}));
 
 	let positions = [];
@@ -90,33 +90,64 @@
 </script>
 
 <div class="pedestal" use:inview={options} on:inview_change={handleChange}>
-	{#each [1, 2, 3] as item, index}
-		<div class="pedestal-item-wrap">
-			<img src="{base}/images/leaderboard/crown.svg" alt="" class="pedestal-crown" loading="lazy" />
-			<div class="pedestal-lider">
-				<img
-					src="{base}/images/leaderboard/avatars/{leaders[index].id}.webp"
-					alt=""
-					width="52px"
-					height="52px"
-					loading="lazy"
-				/>
-				<div>
-					<div class="pedestal-name">
-						{leaders[index].name}
-					</div>
-					<div class="pedestal-profit">
-						{formatProfit(leaders[index].profit)}
-					</div>
+	<div class="pedestal-item-wrap">
+		<img src="{base}/images/leaderboard/crown.svg" alt="" class="pedestal-crown" loading="lazy" />
+		<div class="pedestal-lider">
+			<img
+				src="{base}/images/leaderboard/avatars/bruno.webp"
+				alt=""
+				width="52px"
+				height="52px"
+				loading="lazy"
+			/>
+			<div>
+				<div class="pedestal-name">Bruno J.</div>
+				<div class="pedestal-profit">
+					{formatProfit(leaders[0].profit)}
 				</div>
-			</div>
-			<div class="pedestal-item">
-				<div class="pedestal-block">
-					<div class="pedestal-block-perspective"></div>
-				</div>
-				<div class="number number-{index} number-italic" class:visible={isInView}>{item}</div>
 			</div>
 		</div>
+		<div class="pedestal-item">
+			<div class="pedestal-block">
+				<div class="pedestal-block-perspective"></div>
+			</div>
+			<div class="number number-0 number-italic" class:visible={isInView}>1</div>
+		</div>
+	</div>
+	{#each [1, 2, 3] as item, index}
+		{#if index !== 0}
+			<div class="pedestal-item-wrap">
+				<img
+					src="{base}/images/leaderboard/crown.svg"
+					alt=""
+					class="pedestal-crown"
+					loading="lazy"
+				/>
+				<div class="pedestal-lider">
+					<img
+						src="{base}/images/leaderboard/avatars/{leaders[index].id}.webp"
+						alt=""
+						width="52px"
+						height="52px"
+						loading="lazy"
+					/>
+					<div>
+						<div class="pedestal-name">
+							{leaders[index].name}
+						</div>
+						<div class="pedestal-profit">
+							{formatProfit(leaders[index].profit)}
+						</div>
+					</div>
+				</div>
+				<div class="pedestal-item">
+					<div class="pedestal-block">
+						<div class="pedestal-block-perspective"></div>
+					</div>
+					<div class="number number-{index} number-italic" class:visible={isInView}>{item}</div>
+				</div>
+			</div>
+		{/if}
 	{/each}
 </div>
 

@@ -40,7 +40,7 @@ export const randomizeForThreeRows = (data, randomIndexes) => {
 		if (randomIndexes.includes(index)) {
 			return {
 				...item,
-				asset: Math.floor(Math.random() * 7) + 1,
+				asset: item.id === 6 ? 1 : Math.floor(Math.random() * 7) + 1,
 				time: formatTime(new Date()),
 				type: Math.random() < 0.5,
 				profit: Math.floor(Math.random() * (9999 - 100 + 1)) + 100
