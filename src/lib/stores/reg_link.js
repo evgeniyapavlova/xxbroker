@@ -5,3 +5,4 @@ export const domain = 'https://trade.xxbroker.com/';
 export const linkTraderoom = writable(domain);
 export const linkLogin = writable(domain);
 export const linkRegister = writable(domain);
+export const linkPWA = writable(domain);

@@ -34,3 +34,10 @@ RewriteRule ^(en|es|pt)/$ https://xxbroker.com/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} ^/(es|en|pt)/?$ [NC]
 RewriteRule ^(es|en|pt)/?$ $1.html [NC,L]
+
+RewriteCond %{REQUEST_URI} ^/(en|es|pt)/$ [NC]
+RewriteRule ^(legal/terms-south-africa)/$ https://xxbroker.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^/(legal/terms-south-africa)/?$ [NC]
+RewriteRule ^(legal/terms-south-africa)/?$ $1.html [NC,L]

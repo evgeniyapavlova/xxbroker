@@ -1,7 +1,7 @@
 export default {
 	en: {
 		address:
-			'Sun Wave LLC.<br /> Address: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Nevis<br /> Company business number: L 22402<br /> Payment transactions are managed by: S.W. SUN WAVE CY LTD<br /> Address: 6 Koutsoventi street, 4101 Agios Athanasios Limassol, Cyprus<br /> Company business number: HE 450991',
+			'Sun Wave LLC.<br /> Address: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Nevis<br /> Company business number: L 22402<br /> Payment transactions are managed by: S.W. SUN WAVE CY LTD<br /> Address: Kyriakou Matsi & Anexartisias 3, ROUSSOS LIMASSOL TOWER, 4th Floor, 3040 Limassol, Cyprus<br /> Company business number: HE 450991',
 		items: [
 			{ title: 'Privacy and Data', items: ['Privacy Policy', 'Cookies'] },
 			{
@@ -25,7 +25,7 @@ export default {
 	},
 	es: {
 		address:
-			'Sun Wave LLC.<br />Address: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Nevis<br />Company business number: L 22402<br />Las transacciones de pago son gestionadas por: S.W. SUN WAVE CY LTD<br />Address: 6 Koutsoventi street, 4101 Agios Athanasios Limassol, Cyprus<br />Company business number: HE 450991',
+			'Sun Wave LLC.<br />Address: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Nevis<br />Company business number: L 22402<br />Las transacciones de pago son gestionadas por: S.W. SUN WAVE CY LTD<br />Address: Kyriakou Matsi & Anexartisias 3, ROUSSOS LIMASSOL TOWER, 4th Floor, 3040 Limassol, Cyprus<br />Company business number: HE 450991',
 		items: [
 			{ title: 'Privacidad y Datos', items: ['Política de Privacidad', 'Cookies'] },
 			{
@@ -49,7 +49,7 @@ export default {
 	},
 	pt: {
 		address:
-			'Sun Wave LLC.<br />Endereço: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Neves.<br />Número comercial da empresa: L 22402. <br />As transações de pagamento são gerenciadas por: S.W. SUN WAVE CY LTD. <br />Endereço: 6 Koutsoventi street, 4101 Agios Athanasios Limassol, Chipre. <br />Número comercial da empresa: HE 450991',
+			'Sun Wave LLC.<br />Endereço: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Neves.<br />Número comercial da empresa: L 22402. <br />As transações de pagamento são gerenciadas por: S.W. SUN WAVE CY LTD. <br />Endereço: Kyriakou Matsi & Anexartisias 3, ROUSSOS LIMASSOL TOWER, 4th Floor, 3040 Limassol, Chipre. <br />Número comercial da empresa: HE 450991',
 		items: [
 			{ title: 'Privacidade e Dados', items: ['Política de Privacidade', 'Cookies'] },
 			{
