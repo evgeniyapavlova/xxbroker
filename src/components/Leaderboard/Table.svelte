@@ -25,12 +25,11 @@
 	let leaders = Array.from({ length: 20 }, (_, i) => ({
 		id: i + 1,
 		name: names[i],
-		asset: i === 5 ? 1 : Math.floor(Math.random() * 7) + 1,
+		asset: i === 6 ? 1 : Math.floor(Math.random() * 7) + 1,
 		time: getRandomTime(),
-		date: getTodayDate($lang),
 		type: Math.random() < 0.5,
 		profit: Math.floor(Math.random() * (9999 - 100 + 1)) + 100,
-		country: i === 5 ? 0 : getRandomCountry()
+		country: i === 6 ? 0 : getRandomCountry()
 	}));
 
 	let positions = [];
@@ -49,6 +48,31 @@
 		await tick();
 
 		leaders = sortByProfit(leaders);
+
+		// === Гарантировать, что Bruno J. в топ-3 ===
+		const brunoIndex = leaders.findIndex((l) => l.name === 'Bruno J.');
+		const bruno = leaders[brunoIndex];
+		
+
+		if (brunoIndex > 2) {
+			// Выбираем случайного из топ-3 для обмена profit/time
+			const swapIndex = [0, 1, 2][Math.floor(Math.random() * 3)];
+			const target = leaders[swapIndex];
+
+			// Обмен profit и time
+			const tempProfit = bruno.profit;
+			const tempTime = bruno.time;
+
+			bruno.profit = target.profit;
+			bruno.time = target.time;
+
+			target.profit = tempProfit;
+			target.time = tempTime;
+
+			// Обмен местами
+			leaders[brunoIndex] = target;
+			leaders[swapIndex] = bruno;
+		}
 
 		await tick();
 
@@ -90,64 +114,35 @@
 </script>
 
 <div class="pedestal" use:inview={options} on:inview_change={handleChange}>
-	<div class="pedestal-item-wrap">
-		<img src="{base}/images/leaderboard/crown.svg" alt="" class="pedestal-crown" loading="lazy" />
-		<div class="pedestal-lider">
-			<img
-				src="{base}/images/leaderboard/avatars/bruno.webp"
-				alt=""
-				width="52px"
-				height="52px"
-				loading="lazy"
-			/>
-			<div>
-				<div class="pedestal-name">Bruno J.</div>
-				<div class="pedestal-profit">
-					{formatProfit(leaders[0].profit)}
-				</div>
-			</div>
-		</div>
-		<div class="pedestal-item">
-			<div class="pedestal-block">
-				<div class="pedestal-block-perspective"></div>
-			</div>
-			<div class="number number-0 number-italic" class:visible={isInView}>1</div>
-		</div>
-	</div>
 	{#each [1, 2, 3] as item, index}
-		{#if index !== 0}
-			<div class="pedestal-item-wrap">
+		<div class="pedestal-item-wrap">
+			<img src="{base}/images/leaderboard/crown.svg" alt="" class="pedestal-crown" loading="lazy" />
+			<div class="pedestal-lider">
 				<img
-					src="{base}/images/leaderboard/crown.svg"
+					src="{base}/images/leaderboard/avatars/{leaders[index].name === 'Bruno J.'
+						? 'bruno'
+						: leaders[index].id - 1}.webp"
 					alt=""
-					class="pedestal-crown"
+					width="52px"
+					height="52px"
 					loading="lazy"
 				/>
-				<div class="pedestal-lider">
-					<img
-						src="{base}/images/leaderboard/avatars/{leaders[index].id}.webp"
-						alt=""
-						width="52px"
-						height="52px"
-						loading="lazy"
-					/>
-					<div>
-						<div class="pedestal-name">
-							{leaders[index].name}
-						</div>
-						<div class="pedestal-profit">
-							{formatProfit(leaders[index].profit)}
-						</div>
+				<div>
+					<div class="pedestal-name">
+						{leaders[index].name}
 					</div>
-				</div>
-				<div class="pedestal-item">
-					<div class="pedestal-block">
-						<div class="pedestal-block-perspective"></div>
+					<div class="pedestal-profit">
+						{formatProfit(leaders[index].profit)}
 					</div>
-					<div class="number number-{index} number-italic" class:visible={isInView}>{item}</div>
 				</div>
 			</div>
-		{/if}
+			<div class="pedestal-item">
+				<div class="pedestal-block">
+					<div class="pedestal-block-perspective"></div>
+				</div>
+				<div class="number number-{index} number-italic" class:visible={isInView}>{item}</div>
+			</div>
+		</div>
 	{/each}
 </div>
 
@@ -166,7 +161,7 @@
 				<td>{index + 4}</td>
 
 				<td class="user">
-					<CellWithImg src="{base}/images/leaderboard/avatars/{leader.id}.webp">
+					<CellWithImg src="{base}/images/leaderboard/avatars/{leader.id - 1}.webp">
 						<svelte:fragment slot="title">{leader.name}</svelte:fragment>
 						<svelte:fragment slot="caption">{countries[leader.country]}</svelte:fragment>
 					</CellWithImg>
@@ -185,7 +180,7 @@
 					</CellWithImg>
 				</td>
 				<td>{leader.time}</td>
-				<td style="white-space: nowrap;">{leader.date}</td>
+				<td style="white-space: nowrap;">{getTodayDate($lang)}</td>
 				<td class:buy={leader.type} class="deal-type">
 					<span><ArrowUp />{leader.type ? buy : sell}</span>
 				</td>

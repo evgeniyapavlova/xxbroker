@@ -28,6 +28,7 @@ export const countries = [
 ];
 
 export const names = [
+	'Bruno J.',
 	'Alexandro G.',
 	'Enrico L.',
 	'Sasha M.',
